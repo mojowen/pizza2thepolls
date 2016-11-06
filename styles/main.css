@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  border-top: 10px solid #DB5653;
+  font-family: 'Open Sans', sans-serif;
+}
+
+a {
+  color: #DB5653;
+}
+
+h1 {
+  text-align: center;
+  color: #3DC1C8;
+}
+
+h1, h2 {
+  font-weight: 800;
+}
+
+form {
+  border-radius: 4px;
+  padding: 0;
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 1.5;  
+}
+
+.form-item {
+  padding: 20px 10px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.form-item:first-of-type {
+  border-top: 1px solid #ccc;
+  border-radius: 4px 4px 0 0;
+}
+
+.form-item:last-of-type {
+  border-bottom: none;
+}
+
+label {
+  display: block;
+  margin-bottom: 1em;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+input,
+textarea {
+  font-family: 'Open Sans', sans-serif;
+  width: 100%;
+  margin-bottom: .5em;
+  border-radius: 4px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+
+
+input[type=submit] {
+  transition: background-color .1s ease-in;
+  display: block;
+  background: #3DC1C8;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+  margin-bottom: 0;
+  padding: 20px;
+  border-radius: 0 0 4px 4px;
+}
+
+input[type=submit]:hover {
+  background: #35A8AE;
+}
+
+.help {
+  font-size: .8em;
+  font-style: italic;
+  display: block;
+}
+
+section {
+  padding: 20px 0;
+}
+
+.container {
+  max-width: 800px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: #F0A241;
+  color: #fff;
+}
+
+.report {
+  background: #EFEEEE;
+  color: #333;
+}
+
+.donate {
+  background: #DB5653;
+  color: #fff;
+}
+
+.donate a {
+  color: #fff;
+}
+
+@media (min-width: 769px) {
+  h1 {
+    font-size: 3em;
+  }
+}
