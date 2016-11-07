@@ -1,10 +1,17 @@
 var handler = StripeCheckout.configure({
-  key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
-  image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+  key: 'pk_live_P8CQD0jjeNY83ykHy75Bfxig',
+  image: 'https://polls.pizza/images/logo.png',
   locale: 'auto',
   token: function(token) {
-    // You can access the token ID with `token.id`.
-    // Get the token ID to your server-side code for use.
+    tinyPOST(
+      'https://docs.google.com/forms/d/e/1FAIpQLSf5RPXqXaVk8KwKC7kzthukydvA9vL7_bP9V9O9PIAiXl14cQ/formResponse',
+      {
+        'entry.1599572815': token.email,
+        'entry.690252188': token.card.address_zip,
+        'entry.1474063298': token.id,
+        'entry.1036377864': (window.amount).toString()
+      }
+    )
   }
 });
 
@@ -36,16 +43,19 @@ document.getElementById('donate-form').addEventListener('change', function(e) {
 });
 
 document.getElementById('checkout').addEventListener('click', function(e) {
-  var amount = getAmount();
+  var amount = getAmount(),
+      pizzas = Math.ceil(amount/100/13.5)
 
   if (amount) {
     // Open Checkout with further options:
     handler.open({
-      name: 'Stripe.com',
-      description: '2 widgets',
+      name: 'Pizza to the Polls',
+      description: 'About '+pizzas+' Pizza' + (pizzas > 1 ? 's' : ''),
       zipCode: true,
-      amount: amount
+      amount: amount,
+      image: 'https://polls.pizza/images/logo.png'
     });
+    window.amount = amount / 100
     e.preventDefault();
   }
 });
