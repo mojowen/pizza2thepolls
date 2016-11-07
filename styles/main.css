@@ -37,6 +37,54 @@ h1 .emoji:first-of-type {
   display: none;
 }
 
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+nav {
+  padding: 4px 0;
+}
+
+nav ul {
+  width: 100%;
+  list-style-type: none;
+  display: table;
+  padding: 0 !important;
+}
+
+nav li {
+  padding: 0 5px;
+  margin-bottom: 4px;
+}
+
+nav a {
+  transition: background-color .1s ease-in;
+  display: block;
+  background-color: #DB5653;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2em;
+  padding: 10px;
+  margin: 0;
+  text-decoration: none;
+  text-align: center;
+}
+
+nav .active {
+  /*border-bottom: 4px solid #3DC1C 8;*/
+}
+
+nav li:first-of-type a {
+  border-right: 5px solid #DB5653;
+}
+
+nav a:hover {
+  background: #DB5653;
+}
+
 .form-item {
   padding: 20px 10px;
   border: 1px solid #ccc;
@@ -115,9 +163,19 @@ section {
   color: #333;
 }
 
+.report h2 {
+  border-bottom: 4px solid #333;
+  padding-bottom: 8px;
+}
+
 .donate {
   background: #DB5653;
   color: #fff;
+}
+
+.donate h2 {
+  border-bottom: 4px solid #fff;
+  padding-bottom: 8px;
 }
 
 .donate a {
@@ -136,5 +194,10 @@ section {
 
   p {
     font-size: 1.2em;
+  }
+
+  nav li {
+    width: 50%;
+    display: table-cell;
   }
 }
