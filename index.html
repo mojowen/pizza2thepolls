@@ -12,8 +12,8 @@
   <meta property="og:type" content="website">
 
   <meta name="twitter:card" content="summary" ">
-  <meta name="twitter:site" content="@PizzaPolls" ">
-  <meta name="twitter:creator" content="@whywevote2016" ">
+  <meta name="twitter:site" content="@PizzaToThePolls" ">
+  <meta name="twitter:creator" content="@PizzaToThePolls" ">
   <meta name="twitter:title" content="Pizza to the Polls 🍕🇺🇸">
   <meta name="twitter:description" content="We send pizzas to polling places with long lines. Send us reports and we'll send in the reinforcements.">
   <meta name="twitter:image" content="https://polls.pizza/images/logo.png">
@@ -26,13 +26,19 @@
 <body>
   <div id="main">
     <h1><span class="emoji">🍕🇺🇸</span> Pizza to the Polls <span class="emoji">🇺🇸🍕</span></h1>
+    <nav class="clearfix">
+      <ul class="container">
+        <li><a class="alt" href="#report">Report a long line</a></li>
+        <li><a href="#donate">Donate to the pizza fund</a></li>
+      </ul>
+    </nav>
     <section class="header">
       <div class="container">
         <p>Americans are hungry for democracy and are turning out in record numbers to vote. But that means long lines and sometimes empty stomachs, which might discourage these brave patriots from performing their civic duty.</p>
         <p>Fortunately Pizza to the Polls is here to deliver the one thing that pairs so perfectly with freedom: piping hot 'za. Send us reports of long lines and we'll send in the delicious reinforcements.</p>
       </div>
     </section>
-    <section class="report">
+    <section id="report" class="report">
       <div class="container">
         <h2>Report a long line</h2>
         <p>We need you to help us identify long polling lines full of hungry voters. Use this form to share a link to any tweets or instagrams that include evidence of the long lines and let us know where the polling place is.</p>
@@ -59,14 +65,67 @@
         <p><em>Questions? Get in touch: <a href="mailto:hungry4freedom@polls.pizza">hungry4freedom@polls.pizza</a></em></p>
       </div>
     </section>
-    <section class="donate">
+    <section id="donate" class="donate">
       <div class="container">
-        <h2>Coming Soon: Help Send 🍕</h2>
-        <p>We have a budget of about 200 pizzas thanks to a donation from <a target="_blank" href="https://donaldtrumphastinyhands.com">AAIBWTH PAC</a> but this is not nearly enough funds to feed the U.S.A.</p>
-        <p>Please check back soon for more information about how to send pizzas or how to donate to get pizzas sent.</p>
+        <h2>Donate to the 🍕 fund</h2>
+        <p>Waiting in line sucks. Waiting in line with pizza sucks a little less.</p>
+        <p>Help ensure that America's voters who are stuck in line don't have to wait with an empty stomach by chipping into the pizza fund today.</p>
+        <form id="donate-form">
+          <fieldset>
+            <legend>How many pizzas do you wanna give?</legend>
+            <ul>
+              <li>
+                <input type="radio" value="10" id="radio-1" name="amount">
+                <label class="radio" for="radio-1">1 pizza ($10) 🍕</label>
+              </li>
+              <li>
+                <input type="radio" value="20" id="radio-2" name="amount">
+                <label class="radio" for="radio-2">2 pizzas ($20) 🍕🍕</label>
+              </li>
+              <li>
+                <input type="radio" value="40" id="radio-3" name="amount">
+                <label class="radio" for="radio-3">4 pizzas ($40) 🍕🍕🍕</label>
+              </li>
+              <li>
+                <input type="radio" value="100" id="radio-4" name="amount">
+                <label class="radio" for="radio-4">10 pizzas ($100) 🍕🍕🍕🍕🍕🍕🍕🍕🍕🍕</label>
+              </li>
+            </ul>
+          </fieldset>
+          <div class="radio">
+            <label for="custom-amount">Other:</label> $
+            <input type="text" name="amount" id="custom-amount">
+          </div>
+          <button class="submit is-disabled" id="checkout">Checkout</button>
+        </form>
+      </div>
+    </section>
+    <section id="about" class="about">
+      <div class="container">
+        <h2>About this project</h2>
+        <h3>Where we've sent pizzas:</h3>
+        <ul>
+          <li>16 Pizzas to <a href="https://www.google.com/maps?q=824+BROADWAY+ST,+CINCINNATI,OH">Hamilton County Board of Elections</a> from <a href="https://twitter.com/Saahil_Desai/status/795342933364973570" target="_blank">this tweet</a></li>
+          <li>4 Pizzas to <a href="https://www.google.com/maps?q= 430 NE 61st St, Miami, FL 33137">Lemon City Library</a> from <a href="https://twitter.com/marceelias/status/795418004007878657" target="_blank">this tweet</a></li>
+          <li>6 Pizzas to <a href="https://www.google.com/maps?q=8701 W. Commercial Boulevard Tamarac, FL 33321">Tamarac Branch Library</a> from <a href="https://twitter.com/amysherman1/status/795417962576576512" target="_blank">this tweet</a></li>
+        </ul>
+        <hr>
+        <h3>Is this a chartiy?</h3>
+        <p>No.</p>
+        <hr>
+        <h3>Is this partisan?</h3>
+        <p>No.</p>
+        <hr>
+        <h3>I have more questions?</h3>
+        <p>That's more of a statement - but why don't you send them to us at <a href="mailto:morequestions@polls.pizza">morequestions@polls.pizza</a></p>
+        <hr>
+        <h3>Do You Tweet?</h3>
+        <a class="twitter-timeline" href="https://twitter.com/PizzaToThePolls">Yes!</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <hr>
       </div>
     </section>
   </div>
+  <script src="https://checkout.stripe.com/checkout.js"></script>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -77,5 +136,7 @@
     ga('send', 'pageview');
 
   </script>
+  <script src="js/tinyxhr.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
