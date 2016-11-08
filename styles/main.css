@@ -161,6 +161,7 @@ section {
 .report {
   background: #EFEEEE;
   color: #333;
+  padding-bottom: 40px;
 }
 
 .report h2 {
