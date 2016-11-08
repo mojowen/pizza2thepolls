@@ -1,3 +1,17 @@
+var url = "https://spreadsheets.google.com/feeds/list/1mxmW0YljLEcNP1BUJoUlAEtzzE0FXwbaDBPN26dlloo/od6/public/basic?alt=json";
+
+var now = new Date;
+
+tinyGET(url, null, function(data) {
+  var raised = '$' + data.feed.entry[0].content['$t'].split(': ')[1];
+  var pizzas = data.feed.entry[1].content['$t'].split(': ')[1];
+  var remaining = '$' + data.feed.entry[2].content['$t'].split(': ')[1];
+  document.getElementById('stat-raised').innerHTML = raised;
+  document.getElementById('stat-pizzas').innerHTML = pizzas;
+  document.getElementById('stat-remaining').innerHTML = remaining;
+  document.getElementById('stat-info').innerHTML = 'As of ' + now.toLocaleString();
+});
+
 var handler = StripeCheckout.configure({
   key: 'pk_live_P8CQD0jjeNY83ykHy75Bfxig',
   image: 'https://polls.pizza/images/logo.png',
