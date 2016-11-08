@@ -350,7 +350,8 @@ footer a {
     display: inline;
   }
 
-  p {
+  p,
+  li {
     font-size: 1.2em;
   }
 }
