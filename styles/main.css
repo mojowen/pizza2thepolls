@@ -305,18 +305,9 @@ footer a {
   color: #fff;
 }
 
-@media (min-width: 769px) {
-  h1 {
-    font-size: 3em;
-  }
-
-  h1 .emoji,
-  h1 .emoji:first-of-type {
-    display: inline;
-  }
-
-  p {
-    font-size: 1.2em;
+@media (min-width: 600px) {
+  nav ul {
+    width: auto;
   }
 
   nav li {
@@ -346,5 +337,20 @@ footer a {
 
   .stat__info {
     text-align: right;
+  }
+}
+
+@media (min-width: 769px) {
+  h1 {
+    font-size: 3em;
+  }
+
+  h1 .emoji,
+  h1 .emoji:first-of-type {
+    display: inline;
+  }
+
+  p {
+    font-size: 1.2em;
   }
 }
