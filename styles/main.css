@@ -260,7 +260,7 @@ input[type="radio"]:focus + label {
 
 .stat__info {
   display: block;
-  text-align: right;
+  text-align: center;
   font-size: .8em;
   color: rgba(255,255,255,.7);
 }
@@ -285,6 +285,24 @@ input[type="radio"]:focus + label {
 
 .stat__label {
   display: block;
+}
+
+.about h2 {
+  color: #333;
+  border-bottom: 4px solid #333;
+  padding-bottom: 8px;
+}
+
+footer {
+  background: #3DC1C8;
+  border-top: 5px solid #35A8AE;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer a {
+  color: #fff;
 }
 
 @media (min-width: 769px) {
@@ -324,5 +342,9 @@ input[type="radio"]:focus + label {
 
   .stat:last-of-type {
     border-right: none;
+  }
+
+  .stat__info {
+    text-align: right;
   }
 }
