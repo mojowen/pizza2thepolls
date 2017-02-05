@@ -2,7 +2,7 @@
 <html>
 <head>
   <script type="text/javascript">
-    if( document.location.protocol !== 'https:' ) {
+    if( document.location.protocol !== 'https:' && document.location.toString().search('localhost') === -1) {
       document.location = document.location.toString().replace(/http/, 'https')
     }
   </script>
@@ -12,7 +12,7 @@
 
   <meta property="og:title" content="Pizza to the Polls 🍕🇺🇸">
   <meta property="og:url" content="http://polls.pizza">
-  <meta property="og:description" content="We send pizzas to polling places with long lines. Send us reports and we'll send in the reinforcements.">
+  <meta property="og:description" content="We send pizzas to polling places with long lines and other gatherings of civic engagement. Send us reports and we'll send in the reinforcements.">
   <meta property="og:image" content="images/logo.png">
   <meta property="og:type" content="website">
 
@@ -20,7 +20,7 @@
   <meta name="twitter:site" content="@PizzaToThePolls" ">
   <meta name="twitter:creator" content="@PizzaToThePolls" ">
   <meta name="twitter:title" content="Pizza to the Polls 🍕🇺🇸">
-  <meta name="twitter:description" content="We send pizzas to polling places with long lines. Send us reports and we'll send in the reinforcements.">
+  <meta name="twitter:description" content="We send pizzas to polling places with long lines and other gatherings of civic engagement. Send us reports and we'll send in the reinforcements.">
   <meta name="twitter:image" content="https://polls.pizza/images/logo.png">
 
   <title>Pizza to the Polls</title>
@@ -34,7 +34,7 @@
     <h1><span class="emoji">🍕🇺🇸</span> Pizza to the Polls <span class="emoji">🇺🇸🍕</span></h1>
     <nav class="clearfix">
       <ul class="container">
-        <li><a class="alt" href="#report">Report a long line</a></li>
+        <li><a class="alt" href="#request">Request Pizzas</a></li>
         <li><a href="#donate">Donate to the pizza fund</a></li>
       </ul>
     </nav>
@@ -56,12 +56,16 @@
         </div>
         <span class="stat__info" id="stat-info">As of</span>
         <div>
+          <p>Americans are hungry for democracy and are expressing themselves in polling places and by marching in the streets! But all that walking and all that voting can sometimes empty stomachs, which might discourage these brave patriots from performing their civic duty.</p>
+          <p>Fortunately Pizza to the Polls is here to deliver the one thing that pairs so perfectly with freedom: piping hot 'za. Send us reports of long lines or reports of ongoing or planned marches and we'll send in the delicious reinforcements.</p>
+        </div>
+        <!--<div>
           <p>Americans are hungry for democracy and are turning out in record numbers to vote. But that means long lines and sometimes empty stomachs, which might discourage these brave patriots from performing their civic duty.</p>
           <p>Fortunately Pizza to the Polls is here to deliver the one thing that pairs so perfectly with freedom: piping hot 'za. Send us reports of long lines and we'll send in the delicious reinforcements.</p>
-        </div>
+        </div>-->
       </div>
     </section>
-    <section id="report" class="report">
+    <!--<section id="report" class="report">
       <div class="container">
         <h2>Report a long line</h2>
         <p>We need you to help us identify long polling lines full of hungry voters. Use this form to share a link to any tweets or instagrams that include evidence of the long lines and let us know where the polling place is.</p>
@@ -86,12 +90,39 @@
           <input type="submit" value="Submit report. Feed democracy.">
         </form>
       </div>
+    </section>-->
+    <section id="request" class="report" >
+      <div class="container">
+        <h2>Request Pizza Backup</h2>
+        <p>Are you exercising or planning to exercise your right to free assembly? Would pizzas or other supplies be helpful? Let us know and we'll send in the 🍕 reinforcements!</p>
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLScCIlk-Y-rXLzkHE8rDcrHe0ZB6dQltqrqxlEeR0WeshKm4BA/formResponse" target="_blank" method="POST" >
+          <div class="form-item">
+            <label for="contact-info">Organizer Contact Info</label>
+            <input id="contact-info" type="text" name="entry.729911033" placeholder="e.g. DM @DullesJustice or text Molly at 555-232-3242">
+            <span class="help"><strong>Required:</strong> We need someone to point the delivery person towards when they arrive.</span>
+          </div>
+          <div class="form-item">
+            <label for="address">Location to Deliver Pizza</label>
+            <textarea id="address" type="text" name="entry.1601928181" placeholder="e.g. Arrivals terminal at Dulles Airport near baggage claim #13"></textarea>
+            <span class="help"><strong>Required:</strong> We need to have a specific location plus some directions for the deliver person.</span>
+          </div>
+          <div class="form-item">
+            <label for="other-info">Extra Information</label>
+            <textarea type="text" name="entry.1677582883" placeholder="e.g. things will get started at 3 - pizzas would be great by 3:30"></textarea>
+            <span class="help">Optional: Just anything else we should know!</span>
+          </div>
+          <input type="hidden" name="fvv" value="1">
+          <input type="submit" value="Submit report. Feed democracy.">
+        </form>
+      </div>
     </section>
     <section id="donate" class="donate">
       <div class="container">
         <h2>Donate to the 🍕 fund</h2>
-        <p>Waiting in line sucks. Waiting in line with pizza sucks a little less.</p>
-        <p>Help ensure that America's voters who are stuck in line don't have to wait with an empty stomach by chipping into the pizza fund today.</p>
+        <p>Exercising your right to free assembly can be tough. But with pizza sucks, it's a little easier.</p>
+        <p>Help ensure that Americans don't have to march with an empty stomach by chipping into the pizza fund today.</p>
+        <!--<p>Waiting in line sucks. Waiting in line with pizza sucks a little less.</p>
+        <p>Help ensure that America's voters who are stuck in line don't have to wait with an empty stomach by chipping into the pizza fund today.</p>-->
         <form id="donate-form">
           <fieldset>
             <legend>How many pizzas do you wanna give?</legend>
@@ -132,6 +163,7 @@
           <li>Chicago, IL</li>
           <li>Evanston, IL</li>
           <li>Cincinnati, OH</li>
+          <li>JFK and Dulles Airports</li>
           <li>And counting...</li>
         </ul>
         <p>Check out our <a href="https://twitter.com/PizzaToThePolls">Twitter</a> feed below for the latest updates.</p>
@@ -142,11 +174,14 @@
         <h3>Is this partisan?</h3>
         <p>No.</p>
         <hr>
+        <h3>Isn't marching partisan?</h3>
+        <p>No.</p>
+        <hr>
         <h3>Where do you get your pizza from?</h3>
         <p>We use <a href="http://slicelife.com/">SliceLife</a> to find pizza places close to the lines since they let us tip and don't require someone to sign on delivery. We like to go with the local spots as much as possible.</p>
         <hr>
         <h3>What if there are funds left over?</h3>
-        <p>Every dollar collected will go towards feeding hungry Americans. We just made this in a couple days so haven't had the time to pick out a specific charity, but if you have suggestions, <a href="mailto:morequestions@polls.pizza">please let us know</a>!</p>
+        <p>Every dollar collected will go towards feeding hungry Americans. Any funds not spent will be saved for future hungry voters and/or marchers.</p>
         <hr>
         <h3>I have more questions?</h3>
         <p>That's more of a statement - but why don't you send them to us at <a href="mailto:morequestions@polls.pizza">morequestions@polls.pizza</a></p>

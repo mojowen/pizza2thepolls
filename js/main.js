@@ -3,6 +3,7 @@ var url = "https://spreadsheets.google.com/feeds/list/1mxmW0YljLEcNP1BUJoUlAEtzz
 var now = new Date;
 
 tinyGET(url, null, function(data) {
+  var now = new Date()
   var raised = '$' + data.feed.entry[0].content['$t'].split(': ')[1];
   var pizzas = data.feed.entry[1].content['$t'].split(': ')[1];
   var remaining = '$' + data.feed.entry[2].content['$t'].split(': ')[1];
