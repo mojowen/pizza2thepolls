@@ -1,7 +1,7 @@
 {
-  "name": "Pizza2thePolls",
+  "name": "PizzatothePolls",
   "version": "0.0.1",
-  "description": "What am I about?",
+  "description": "Feeding the insatiable maw of democracy",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
