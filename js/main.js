@@ -14,18 +14,18 @@ tinyGET(url, null, function(data) {
 });
 
 var handler = StripeCheckout.configure({
-  key: 'pk_live_P8CQD0jjeNY83ykHy75Bfxig',
+  key: 'pk_test_YCa5It9RFIu9vLPZSmRcTKYD',
   image: 'https://polls.pizza/images/logo.png',
   locale: 'auto',
   token: function(token) {
     tinyPOST(
-      'https://docs.google.com/forms/d/e/1FAIpQLSf5RPXqXaVk8KwKC7kzthukydvA9vL7_bP9V9O9PIAiXl14cQ/formResponse',
+      '/donate',
       {
-        'entry.1599572815': token.email,
-        'entry.690252188': token.card.address_zip,
-        'entry.1474063298': token.id,
-        'entry.1036377864': (window.amount).toString(),
-        'entry.104127523': document.domain
+        'email': token.email,
+        'zip': token.card.address_zip,
+        'token': token.id,
+        'amount': (window.amount).toString(),
+        'domain': document.domain
       }
     )
   }
