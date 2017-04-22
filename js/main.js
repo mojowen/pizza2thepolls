@@ -24,7 +24,8 @@ var handler = StripeCheckout.configure({
         'entry.1599572815': token.email,
         'entry.690252188': token.card.address_zip,
         'entry.1474063298': token.id,
-        'entry.1036377864': (window.amount).toString()
+        'entry.1036377864': (window.amount).toString(),
+        'entry.104127523': document.domain
       }
     )
   }
