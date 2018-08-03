@@ -1,6 +1,7 @@
 var url = "https://spreadsheets.google.com/feeds/list/1mxmW0YljLEcNP1BUJoUlAEtzzE0FXwbaDBPN26dlloo/od6/public/basic?alt=json";
 
 var now = new Date;
+var directPay;
 
 tinyGET(url, null, function(data) {
   var now = new Date()
@@ -13,22 +14,68 @@ tinyGET(url, null, function(data) {
   document.getElementById('stat-info').innerHTML = 'As of ' + now.toLocaleString();
 });
 
+var tokenHandler = function(token) {
+  tinyPOST(
+    'https://docs.google.com/forms/d/e/1FAIpQLSf5RPXqXaVk8KwKC7kzthukydvA9vL7_bP9V9O9PIAiXl14cQ/formResponse',
+    {
+      'entry.1599572815': token.email,
+      'entry.690252188': token.card.address_zip,
+      'entry.1474063298': token.id,
+      'entry.1036377864': (window.amount).toString(),
+      'entry.104127523': document.domain
+    }
+  )
+}
+
+var enableDirectPay = function(amount, pizzas) {
+  var total = {
+    label: 'About '+pizzas+' Pizza' + (pizzas > 1 ? 's' : ''),
+    amount: amount,
+  }
+
+  // [Enable apple pay if possible
+  if( directPay ) {
+    directPay.update({ total: total })
+  } else {
+    directPay = stripe.paymentRequest({
+      country: 'US',
+      currency: 'usd',
+      total: total,
+      requestPayerName: true,
+      requestPayerEmail: true,
+    });
+
+    var prButton = elements.create(
+      'paymentRequestButton',
+      {
+        paymentRequest: directPay,
+        style: {
+          paymentRequestButton: {
+            type: 'donate',
+            theme: 'light',
+            height: '60px',
+          }
+        }
+      }
+    );
+
+    directPay.canMakePayment().then(function(result) {
+      if (result) {
+        document.getElementById('payment-request-button').style.display = 'block';
+        prButton.mount('#payment-request-button');
+      } else {
+        document.getElementById('payment-request-button').style.display = 'none';
+      }
+    });
+    directPay.on('token', function(ev) { tokenHandler(ev.token) })
+  }
+}
+
 var handler = StripeCheckout.configure({
   key: 'pk_live_P8CQD0jjeNY83ykHy75Bfxig',
   image: 'https://polls.pizza/images/logo.png',
   locale: 'auto',
-  token: function(token) {
-    tinyPOST(
-      'https://docs.google.com/forms/d/e/1FAIpQLSf5RPXqXaVk8KwKC7kzthukydvA9vL7_bP9V9O9PIAiXl14cQ/formResponse',
-      {
-        'entry.1599572815': token.email,
-        'entry.690252188': token.card.address_zip,
-        'entry.1474063298': token.id,
-        'entry.1036377864': (window.amount).toString(),
-        'entry.104127523': document.domain
-      }
-    )
-  }
+  token: tokenHandler
 });
 
 var getAmount = function() {
@@ -50,9 +97,12 @@ var getAmount = function() {
 };
 
 document.getElementById('donate-form').addEventListener('change', function(e) {
-  var amount = getAmount();
+  var amount = getAmount(),
+      pizzas = Math.ceil(amount/100/13.5);
+
   if (amount) {
     document.getElementById('checkout').classList.remove('is-disabled');
+    enableDirectPay(amount, pizzas);
   } else {
     document.getElementById('checkout').classList.add('is-disabled');
   }
@@ -80,3 +130,8 @@ document.getElementById('checkout').addEventListener('click', function(e) {
 window.addEventListener('popstate', function() {
   handler.close();
 });
+
+// Apple / Google Pay
+var stripe = Stripe('pk_live_P8CQD0jjeNY83ykHy75Bfxig');
+var elements = stripe.elements();
+

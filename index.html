@@ -149,7 +149,8 @@
             <label for="custom-amount">Other:</label> $
             <input type="text" name="amount" id="custom-amount">
           </div>
-          <button class="submit is-disabled" id="checkout">Checkout</button>
+          <button class="submit is-disabled" id="checkout">Credit Card</button>
+          <div id="payment-request-button"></div>
         </form>
       </div>
     </section>
@@ -205,6 +206,7 @@
     </footer>
   </div>
   <script src="https://checkout.stripe.com/checkout.js"></script>
+  <script src="https://js.stripe.com/v3/"></script>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
