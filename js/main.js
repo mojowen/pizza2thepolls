@@ -60,9 +60,9 @@ var enableDirectPay = function(amount, pizzas) {
 
     directPay.canMakePayment().then(function(result) {
       if (result) {
-        document.getElementById("payment-request-button").style.display =
-          "block";
-        prButton.mount("#payment-request-button");
+        document.getElementById('payment-request-button').style.display = 'block';
+        prButton.mount('#payment-request-button');
+        document.getElementById('checkout').style.display = 'none';
       } else {
         document.getElementById("payment-request-button").style.display =
           "none";
