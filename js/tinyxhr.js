@@ -1,24 +1,26 @@
-function tinyPOST(url,data,callback) {
- tinyxhr(url,data,callback,'POST');
+function tinyPOST(url, data, callback) {
+ tinyxhr(url, data, callback, 'POST');
 }
 
-function tinyGET(url,data,callback) {
- tinyxhr(url,data,callback);
+function tinyGET(url, callback) {
+ tinyxhr(url, null, callback);
 }
 
 function tinyxhr(url,data,callback,method,contenttype,timeout) {
+  var requestTimeout, xhr;
 
-  var requestTimeout,xhr;
-
-  try{ xhr = new XMLHttpRequest();
-  } catch(e){
-    try{ xhr = new ActiveXObject("Msxml2.XMLHTTP");}
-    catch (e){ return null; }
+  try { xhr = new XMLHttpRequest(); } catch(e) {
+    try { xhr = new ActiveXObject("Msxml2.XMLHTTP"); }
+    catch (e) { return null; }
   }
 
-  requestTimeout = setTimeout( function() {
-    xhr.abort(); callback(new Error("tinyxhr: aborted by a timeout"), "",xhr);
-  }, timeout || 5000);
+  requestTimeout = setTimeout(
+    function() {
+      xhr.abort();
+      callback(new Error("tinyxhr: aborted by a timeout"), "", xhr);
+    },
+    timeout || 5000
+  );
 
   xhr.onreadystatechange = function() {
     if (xhr.readyState != 4) return;

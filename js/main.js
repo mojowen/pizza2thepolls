@@ -1,20 +1,36 @@
-var url =
-  "https://spreadsheets.google.com/feeds/list/1mxmW0YljLEcNP1BUJoUlAEtzzE0FXwbaDBPN26dlloo/od6/public/basic?alt=json";
-
-var now = new Date();
+var totals_url = "https://spreadsheets.google.com/feeds/list/1mxmW0YljLEcNP1BUJoUlAEtzzE0FXwbaDBPN26dlloo/1/public/basic?alt=json";
+var adresses_url = "https://spreadsheets.google.com/feeds/list/1mxmW0YljLEcNP1BUJoUlAEtzzE0FXwbaDBPN26dlloo/2/public/basic?alt=json";
+var now = new Date;
+var addresses = [];
 var directPay;
 
-tinyGET(url, null, function(data) {
-  var now = new Date();
-  var raised = "$" + data.feed.entry[0].content["$t"].split(": ")[1];
-  var pizzas = data.feed.entry[1].content["$t"].split(": ")[1];
-  var remaining = "$" + data.feed.entry[2].content["$t"].split(": ")[1];
-  document.getElementById("stat-raised").innerHTML = raised;
-  document.getElementById("stat-pizzas").innerHTML = pizzas;
-  document.getElementById("stat-remaining").innerHTML = remaining;
-  document.getElementById("stat-info").innerHTML =
-    "As of " + now.toLocaleString();
+tinyGET(totals_url,function(data) {
+  var now = new Date()
+  var raised = '$' + data.feed.entry[0].content['$t'].split(': ')[1];
+  var pizzas = data.feed.entry[1].content['$t'].split(': ')[1];
+  var remaining = '$' + data.feed.entry[2].content['$t'].split(': ')[1];
+  document.getElementById('stat-raised').innerHTML = raised;
+  document.getElementById('stat-pizzas').innerHTML = pizzas;
+  document.getElementById('stat-remaining').innerHTML = remaining;
+  document.getElementById('stat-info').innerHTML = 'As of ' + now.toLocaleString();
 });
+
+tinyGET(adresses_url, function(data) {
+  for (var i = 0; i < data.feed.entry.length; i++) {
+    var entry = data.feed.entry[i],
+        address = {},
+        content = entry.content["$t"].split(/\,\s/);
+    for (var j = 0; j < content.length; j++) {
+      var col = content[j],
+          key = col.split(/\:\s/)[0],
+          val = col.split(/\:\s/)[1];
+      address[key] = val;
+    }
+    try { addresses.timestamp = new Date(addresses.timestamp) } catch(e) { }
+    addresses.push(address)
+  }
+})
+
 
 var tokenHandler = function(token) {
   tinyPOST(
