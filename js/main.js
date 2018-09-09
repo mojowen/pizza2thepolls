@@ -17,16 +17,15 @@ tinyGET(totals_url,function(data) {
 
 tinyGET(adresses_url, function(data) {
   for (var i = 0; i < data.feed.entry.length; i++) {
-    var entry = data.feed.entry[i],
+    var content = data.feed.entry[i].content["$t"],
         address = {},
-        content = entry.content["$t"].split(/\,\s/);
-    for (var j = 0; j < content.length; j++) {
-      var col = content[j],
-          key = col.split(/\:\s/)[0],
-          val = col.split(/\:\s/)[1];
-      address[key] = val;
+        keys = content.match(/[a-z]*(?=:\s)/g).filter( function(el) { return el.length > 0 })
+        values = content.split(/\,\s[a-z]*\:\s/).filter( function(el) { return el.length > 0 })
+    for (var j = 0; j < keys.length; j++) {
+      var key = keys[j];
+      address[key] = values[j].replace(key+": ", "");
     }
-    try { addresses.timestamp = new Date(addresses.timestamp) } catch(e) { }
+    try { address.timestamp = new Date(address.timestamp) } catch(e) { }
     addresses.push(address)
   }
 })
