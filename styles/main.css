@@ -387,8 +387,20 @@ dialog[open] {
 dialog {
   position: absolute;
   top: 20%;
-  width: 400px;
-  left: auto;
+  width: 600px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+  background: #fff;
+}
+
+dialog button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-color: none;
+  border: none;
 }
 /**
  * When the native `<dialog>` element is not supported, the script toggles the

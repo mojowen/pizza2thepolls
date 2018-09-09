@@ -7,6 +7,7 @@ var now = new Date();
 var addresses = [];
 var directPay;
 var form = document.getElementById("form");
+var duplicateModal = new A11yDialog(document.getElementById("duplicate-modal"));
 
 tinyGET(totals_url, function(data) {
   var now = new Date();
@@ -233,17 +234,7 @@ function handleDuplicate(address) {
   } was already reported and we've already sent ${
     address.numberofpizzas
   } pizzas there.`;
-  showDuplicateModal();
-}
-
-function showDuplicateModal() {
-  var duplicateModal = new A11yDialog(
-    document.getElementById("duplicate-modal")
-  );
   duplicateModal.show();
-  duplicateModal.on("hide", function(element, event) {
-    duplicateModal.destroy();
-  });
 }
 
 function validateForm() {
