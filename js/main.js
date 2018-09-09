@@ -1,35 +1,45 @@
-var totals_url = "https://spreadsheets.google.com/feeds/list/1mxmW0YljLEcNP1BUJoUlAEtzzE0FXwbaDBPN26dlloo/1/public/basic?alt=json";
-var adresses_url = "https://spreadsheets.google.com/feeds/list/1mxmW0YljLEcNP1BUJoUlAEtzzE0FXwbaDBPN26dlloo/2/public/basic?alt=json";
-var now = new Date;
+var totals_url =
+  "https://spreadsheets.google.com/feeds/list/1mxmW0YljLEcNP1BUJoUlAEtzzE0FXwbaDBPN26dlloo/1/public/basic?alt=json";
+var addresses_url =
+  "https://spreadsheets.google.com/feeds/list/1mxmW0YljLEcNP1BUJoUlAEtzzE0FXwbaDBPN26dlloo/2/public/basic?alt=json";
+var hook_url = "https://hooks.zapier.com/hooks/catch/2966893/qk6is7/";
+var now = new Date();
 var addresses = [];
 var directPay;
+var form = document.getElementById("form");
 
-tinyGET(totals_url,function(data) {
-  var now = new Date()
-  var raised = '$' + data.feed.entry[0].content['$t'].split(': ')[1];
-  var pizzas = data.feed.entry[1].content['$t'].split(': ')[1];
-  var remaining = '$' + data.feed.entry[2].content['$t'].split(': ')[1];
-  document.getElementById('stat-raised').innerHTML = raised;
-  document.getElementById('stat-pizzas').innerHTML = pizzas;
-  document.getElementById('stat-remaining').innerHTML = remaining;
-  document.getElementById('stat-info').innerHTML = 'As of ' + now.toLocaleString();
+tinyGET(totals_url, function(data) {
+  var now = new Date();
+  var raised = "$" + data.feed.entry[0].content["$t"].split(": ")[1];
+  var pizzas = data.feed.entry[1].content["$t"].split(": ")[1];
+  var remaining = "$" + data.feed.entry[2].content["$t"].split(": ")[1];
+  document.getElementById("stat-raised").innerHTML = raised;
+  document.getElementById("stat-pizzas").innerHTML = pizzas;
+  document.getElementById("stat-remaining").innerHTML = remaining;
+  document.getElementById("stat-info").innerHTML =
+    "As of " + now.toLocaleString();
 });
 
-tinyGET(adresses_url, function(data) {
+tinyGET(addresses_url, function(data) {
   for (var i = 0; i < data.feed.entry.length; i++) {
     var content = data.feed.entry[i].content["$t"],
-        address = {},
-        keys = content.match(/[a-z]*(?=:\s)/g).filter( function(el) { return el.length > 0 })
-        values = content.split(/\,\s[a-z]*\:\s/).filter( function(el) { return el.length > 0 })
+      address = {},
+      keys = content.match(/[a-z]*(?=:\s)/g).filter(function(el) {
+        return el.length > 0;
+      });
+    values = content.split(/\,\s[a-z]*\:\s/).filter(function(el) {
+      return el.length > 0;
+    });
     for (var j = 0; j < keys.length; j++) {
       var key = keys[j];
-      address[key] = values[j].replace(key+": ", "");
+      address[key] = values[j].replace(key + ": ", "");
     }
-    try { address.timestamp = new Date(address.timestamp) } catch(e) { }
-    addresses.push(address)
+    try {
+      address.timestamp = new Date(address.timestamp);
+    } catch (e) {}
+    addresses.push(address);
   }
-})
-
+});
 
 var tokenHandler = function(token) {
   tinyPOST(
@@ -75,9 +85,10 @@ var enableDirectPay = function(amount, pizzas) {
 
     directPay.canMakePayment().then(function(result) {
       if (result) {
-        document.getElementById('payment-request-button').style.display = 'block';
-        prButton.mount('#payment-request-button');
-        document.getElementById('checkout').style.display = 'none';
+        document.getElementById("payment-request-button").style.display =
+          "block";
+        prButton.mount("#payment-request-button");
+        document.getElementById("checkout").style.display = "none";
       } else {
         document.getElementById("payment-request-button").style.display =
           "none";
@@ -198,6 +209,8 @@ function fillInAddress() {
 
   toggleAddressVisibility();
 
+  document.getElementById("formatted_address").value = place.formatted_address;
+
   // Get each component of the address from the place details
   // and fill the corresponding field on the form.
   for (var i = 0; i < place.address_components.length; i++) {
@@ -209,18 +222,61 @@ function fillInAddress() {
   }
 }
 
-function handleSubmit() {
+function submitForm(data) {
+  tinyPOST(hook_url, data, function() {});
+}
+
+function handleDuplicate(address) {
+  var duplicateInfo = document.getElementById("duplicate-info");
+  duplicateInfo.innerText = `The line at ${
+    address.whatstheaddressofthepollingplace
+  } was already reported and we've already sent ${
+    address.numberofpizzas
+  } pizzas there.`;
+  showDuplicateModal();
+}
+
+function showDuplicateModal() {
+  var duplicateModal = new A11yDialog(
+    document.getElementById("duplicate-modal")
+  );
+  duplicateModal.show();
+  duplicateModal.on("hide", function(element, event) {
+    duplicateModal.destroy();
+  });
+}
+
+function validateForm() {
   /* TODO:
   - Check for required values
   -
   */
-  var data = {};
-  Array.prototype.map.call(
-    document.getElementById("form").querySelectorAll("input"),
-    function(el) {
-      data[el.name] = el.value;
-    }
-  );
+  var messages = {
+    noAddress: "Please submit an address.",
+    noSocial: "Please include a link to a report on social media",
+    duplicate: "This address has already been reported"
+  };
+  var uniqueAddress = true;
 
-  console.log(data);
+  var data = {};
+  Array.prototype.map.call(form.querySelectorAll("input"), function(el) {
+    data[el.name] = el.value;
+  });
+
+  if (!data.formatted_address) {
+    alert(messages.noAddress);
+  } else {
+    for (i = 0; i < addresses.length; i++) {
+      if (
+        addresses[i].whatstheaddressofthepollingplace === data.formatted_address
+      ) {
+        handleDuplicate(addresses[i]);
+        uniqueAddress = false;
+      }
+    }
+  }
+
+  if (uniqueAddress) {
+    submitForm(data);
+  }
 }

@@ -109,7 +109,8 @@
             <br />
             <span class="help">Optional: So we can follow up when the pizza is inbound</span>
           </div>
-          <button class="submit" type="button" onClick="handleSubmit()">Submit report. Feed democracy</button>
+          <input type="hidden" id="formatted_address" name="formatted_address">
+          <button class="submit" type="button" onClick="validateForm()">Submit report. Feed democracy</button>
         </form>
       </div>
     </section>
@@ -227,6 +228,17 @@
       </div>
     </footer>
   </div>
+  <div id="duplicate-modal" class="dialog-container" aria-hidden="true">
+    <div tabindex="-1" data-a11y-dialog-hide></div>
+    <dialog aria-labelledby="dialog-title">
+      <button type="button" data-a11y-dialog-hide aria-label="Close this dialog window">
+        &times;
+      </button>
+      <h2 id="dialog-title">Thanks but we're already on it!</h2>
+      <p id="duplicate-info"></p>
+      <p>But if you want to report another long line, please do!</p>
+    </dialog>
+  </div>
   <script src="https://checkout.stripe.com/checkout.js"></script>
   <script src="https://js.stripe.com/v3/"></script>
   <script>
@@ -242,6 +254,7 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBb_IhCGGA3lt72lYpPy5rhQycPBKFDssw&libraries=places&callback=initAutocomplete"
     async defer></script>
   <script src="js/tinyxhr.js"></script>
+  <script src="js/modal.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
