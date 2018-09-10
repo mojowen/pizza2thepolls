@@ -1,2 +1,2 @@
-exclude: [README.md, .well_known]
+exclude: [README.md, .well_known, .well-known/apple-developer-merchantid-domain-association/, .well-known/apple-developer-merchantid-domain-association/index.html]
 
