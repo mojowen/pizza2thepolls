@@ -21,3 +21,7 @@ node_js:
 branches:
   only:
     - master
+
+addons:
+  artifacts:
+    s3_region: "us-west-2"
