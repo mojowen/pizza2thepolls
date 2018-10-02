@@ -5,6 +5,7 @@ deploy:
     secure: fs0hk6xUYI4gMY0TtL/E1rXsrHDgBbtUWCiufi+Aj83qQvzHg28U/m2GkkHLAWjb84iYnbPSToy5Fx+3w1wCkBDtC8QSWC5g+omRteotwrE064KklgO2VPGaJrokepbOInym42cP2yK3kpFWtplqvPjMkKvC5Sbnh35aL6ZcmT5rhIkXCS44B7XHJ2Mz0OMndDf0j1jl4eFzlIclf1W/tdhDd2RjSdegp75kpjoxuIWs4PJJy24RSnxybBx0WRZPE5q95VN8ExES1r8oYPwhlszB3U/FL4n6nwZekxuG6n/p2kp7ybeOVU0aKo8Bu1E/0834/iv9q2EP5gvA7dEV9hjb2jrxHdFBtHm/ooJESjm4PnDxRF5Tq5HYGG/b8O1TJ17Nk+PGZPRxAHEskUPIx3VsJ5c7S2afYwFx7+7ADQsZ5Fwg52thr+NZ/gSTdh0b3AIPPYX9VxhWe2RI7Hwrc43LgWUclWP7o9X1LCs7iHQOUlaTG8hQ6aYiWErhPMumsSR0CS9A5QdoG1CvRYxJRlQApriJn9Jx+8+Jtu9XzDZcZuYjfbvqXbj+hxV/OaDnhcMIHOuqNFjxD3gyA90cvymjWgwersFukTvORZlC2TyHOrvxEX8DuDCU0z/o7J6NmndH+3Uj9HdFlHumUlf+7sOJtiCBgS6GDvkQwP8UhDQ=
   bucket: s3.polls.pizza
   acl: public_read
+  region: us-west-2
   on:
     repo: mojowen/pizza2thepolls
 
