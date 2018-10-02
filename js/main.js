@@ -179,7 +179,7 @@ function initAutocomplete() {
   // location types.
   autocomplete = new google.maps.places.Autocomplete(
     /** @type {!HTMLInputElement} */ (document.getElementById("autocomplete")),
-    { types: ["geocode"] }
+    { types: ["establishment"] }
   );
 
   // When the user selects an address from the dropdown, populate the address
