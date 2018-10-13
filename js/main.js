@@ -162,7 +162,7 @@ var componentForm = {
   locality: "long_name",
   administrative_area_level_1: "short_name",
   postal_code: "short_name",
-  premise: "long_name"
+  premise: "name"
 };
 
 function toggleAddressVisibility() {
@@ -233,12 +233,27 @@ function handleSubmit() {
   -
   */
   var data = {};
+  submit_message.textContent = '';
+
   Array.prototype.map.call(
     document.getElementById("form").querySelectorAll("input"),
     function(el) {
       data[el.name] = el.value;
     }
   );
-
-  console.log(data);
+  if( !data.full_place || !data.social_link ) {
+      submit_message.textContent = 'Hmmm you are missing some crucial details there'
+      return false;
+  }
+  tinyPOST(
+    'https://hooks.zapier.com/hooks/catch/2966893/qk6is7/',
+    data,
+    function(resp) {
+      Array.prototype.map.call(
+        document.getElementById("form").querySelectorAll("input"),
+        function(el) { el.value = '';}
+      );
+      submit_message.textContent = 'Thanks! We will get right on that';
+    }
+  )
 }
