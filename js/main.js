@@ -77,7 +77,6 @@ var enableDirectPay = function(amount, pizzas) {
       if (result) {
         document.getElementById('payment-request-button').style.display = 'block';
         prButton.mount('#payment-request-button');
-        document.getElementById('checkout').style.display = 'none';
       } else {
         document.getElementById("payment-request-button").style.display =
           "none";
@@ -249,6 +248,7 @@ function handleSubmit() {
     'https://hooks.zapier.com/hooks/catch/2966893/qk6is7/',
     data,
     function(resp) {
+      toggleAddressVisibility()
       Array.prototype.map.call(
         document.getElementById("form").querySelectorAll("input"),
         function(el) { el.value = '';}
