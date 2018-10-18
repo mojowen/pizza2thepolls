@@ -161,12 +161,13 @@ var componentForm = {
   locality: "long_name",
   administrative_area_level_1: "short_name",
   postal_code: "short_name",
-  premise: "name"
+  premise: "name",
+  formatted_address: "formatted_address",
 };
 
 function toggleAddressVisibility() {
   const address = document.getElementById("address");
-  if (typeof address.getAttribute("hidden") !== null) {
+  if ( address.getAttribute("hidden") !== null) {
     address.removeAttribute("hidden");
   } else {
     address.setAttribute("hidden", "");
@@ -192,7 +193,6 @@ function fillInAddress() {
 
   for (var component in componentForm) {
     document.getElementById(component).value = "";
-    // document.getElementById(component).disabled = false;
   }
 
   toggleAddressVisibility();
@@ -200,12 +200,14 @@ function fillInAddress() {
   // Get each component of the address from the place details
   // and fill the corresponding field on the form.
   for (var i = 0; i < place.address_components.length; i++) {
-    var addressType = place.address_components[i].types[0];
+      var addressType = place.address_components[i].types[0],
+          val = place.address_components[i][componentForm[addressType]];
     if (componentForm[addressType]) {
-      var val = place.address_components[i][componentForm[addressType]];
       document.getElementById(addressType).value = val;
     }
   }
+  premise.value = place.name;
+  formatted_address.value = place.formatted_address;
 }
 
 // Bias the autocomplete object to the user's geographical location,
