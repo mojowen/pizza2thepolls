@@ -32,7 +32,6 @@ tinyGET(adresses_url, function(data) {
 
 
 var tokenHandler = function(token, callback) {
-  var callback = callback || ()
   tinyPOST(
     "https://docs.google.com/forms/d/e/1FAIpQLSf5RPXqXaVk8KwKC7kzthukydvA9vL7_bP9V9O9PIAiXl14cQ/formResponse",
     {
@@ -42,7 +41,7 @@ var tokenHandler = function(token, callback) {
       "entry.1036377864": window.amount.toString(),
       "entry.104127523": document.domain
     },
-    callback
+    callback || function() {}
   );
 };
 
