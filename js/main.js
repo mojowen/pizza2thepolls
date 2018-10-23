@@ -76,8 +76,9 @@ var enableDirectPay = function(amount, pizzas) {
 
     directPay.canMakePayment().then(function(result) {
       if (result) {
-        document.getElementById('payment-request-button').style.display = 'block';
-        prButton.mount('#payment-request-button');
+        // dobt show apple pay button
+        // document.getElementById('payment-request-button').style.display = 'block';
+        // prButton.mount('#payment-request-button');
       } else {
         document.getElementById("payment-request-button").style.display =
           "none";
