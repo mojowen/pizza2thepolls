@@ -1,0 +1,27 @@
+.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 20px;
+  background: #f0a241;
+
+  &[hidden] {
+    display: none;
+  }
+
+  li {
+    padding-bottom: 10px;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.menu-button {
+  float: left;
+  background: #fff;
+}
+
+@media (min-width: 769px) {
+}

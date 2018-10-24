@@ -1,0 +1,27 @@
+.stats {
+  padding-bottom: 10px;
+}
+.stat__info {
+  display: block;
+  text-align: center;
+  font-size: 0.8em;
+  color: rgba(255, 255, 255, 0.7);
+}
+.stat {
+  width: 100%;
+  display: block;
+  text-align: center;
+  padding: 20px;
+  border-bottom: 2px solid #d68522;
+  margin-right: 2px;
+}
+.stat:last-of-type {
+  border-bottom: none;
+}
+.stat__number {
+  font-weight: 800;
+  font-size: 3em;
+}
+.stat__label {
+  display: block;
+}
