@@ -30,6 +30,12 @@ tinyGET(adresses_url, function(data) {
   }
 })
 
+var showConfirmation = function(amount) {
+  var message = `Thanks for donating $${amount} to Pizza to the Polls. You'll receive a receipt in your email soon.`;
+  document.getElementById("donate-confirmation-message").innerHTML = message;
+  document.getElementById("donate-confirmation").removeAttribute("hidden");
+  document.getElementById("donate-form").setAttribute("hidden", null);
+};
 
 var tokenHandler = function(token, callback) {
   tinyPOST(
@@ -43,6 +49,8 @@ var tokenHandler = function(token, callback) {
     },
     callback || function() {}
   );
+
+  showConfirmation(window.amount.toString());
 };
 
 var enableDirectPay = function(amount, pizzas) {
