@@ -176,6 +176,18 @@
           <button class="submit is-disabled" id="checkout">Checkout</button>
           <div id="payment-request-button"></div>
         </form>
+        <div id="donate-confirmation" hidden>
+          <h3>Thanks for helping make the pizza magic happen!</h3>
+          <p id="donate-confirmation-message"></p>
+          <p>Why not spread the word?</p>
+          <a
+            href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+            class="twitter-share-button"
+            data-size="large"
+            data-text="I just donated to @pizzatothepolls! You can give today at"
+            data-url="https://polls.pizza"
+            data-show-count="false">Tweet</a>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>        </div>
       </div>
     </section>
     <section id="about" class="about">
@@ -188,20 +200,18 @@
           <li>Chicago, IL</li>
           <li>Evanston, IL</li>
           <li>Cincinnati, OH</li>
-          <li>JFK and Dulles Airports</li>
           <li>And counting...</li>
         </ul>
         <p>Check out our <a href="https://twitter.com/PizzaToThePolls">Twitter</a> feed below for the latest updates.</p>
         <hr>
         <h3>Is this a charity?</h3>
-        <p>No.</p>
+        <p>No, so contributions are not tax-deductible. (But we are an official 501(c)(4) nonprofit, if you're a tax code nerd like that).</p>
         <hr>
-        <h3>Is this partisan?</h3>
-        <p>No.</p>
+        <h3>Who do you give pizzas to?</h3>
+        <p>We send pizzas anywhere there's a line and ask our delivery people to give them to anyone there: people in line, their kids, poll volunteers and staff, and anyone else hungry for a slice.</p>
         <hr>
-        <h3>Isn't marching partisan?</h3>
-        <p>No.</p>
-        <hr>
+        <h3>So is this partisan?</h3>
+        <p>No. Ain't nothing partisan about trying to make voting less of a drag.</p>
         <h3>Where do you get your pizza from?</h3>
         <p>We use <a href="http://slicelife.com/">SliceLife</a> to find pizza places close to the lines since they let us tip and don't require someone to sign on delivery. We like to go with the local spots as much as possible.</p>
         <hr>
@@ -222,8 +232,33 @@
     </section>
     <footer>
       <div class="container">
-        <div class="footer__left">
-          <a href="mailto:morequestions@polls.pizza">morequestions@polls.pizza</a> <br>
+        <!-- Begin Mailchimp Signup Form -->
+        <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+        <style type="text/css">
+          #mc_embed_signup {
+            clear: left;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+          }
+        </style>
+        <div id="mc_embed_signup" class="clearfix">
+          <form action="https://pizza.us14.list-manage.com/subscribe/post?u=ff4b828d01c30e7ef1de2e24b&amp;id=a2d940b77b" method="post"
+            id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <div id="mc_embed_signup_scroll">
+              <label for="mce-EMAIL">Sign up for updates from Pizza to the Polls</label>
+              <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+              <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ff4b828d01c30e7ef1de2e24b_a2d940b77b"
+                  tabindex="-1" value=""></div>
+            </div>
+          </form>
+        </div>
+
+        <!--End mc_embed_signup-->
+        <div class="clearfix">
+          <a href="mailto:morequestions@polls.pizza">morequestions@polls.pizza</a> |
           <a href="https://twitter.com/PizzaToThePolls">@PizzaToThePolls</a>
         </div>
       </div>
