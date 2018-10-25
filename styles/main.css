@@ -85,22 +85,12 @@ nav a:hover {
 
 .form-item {
   padding: 20px 10px;
-  border: 1px solid #ccc;
   border-top: none;
-}
-
-.form-item:first-of-type {
-  border-top: 1px solid #ccc;
-  border-radius: 4px 4px 0 0;
-}
-
-.form-item:last-of-type {
-  border-bottom: none;
 }
 
 label {
   display: block;
-  margin-bottom: 1em;
+  margin-bottom: 10px;
   font-weight: bold;
   font-size: 1.2em;
 }
@@ -309,7 +299,7 @@ footer {
   background: #3dc1c8;
   border-top: 5px solid #35a8ae;
   color: #fff;
-  padding: 20px 0;
+  padding: 40px 0;
   text-align: center;
 }
 
