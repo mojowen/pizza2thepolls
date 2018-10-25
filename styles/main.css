@@ -317,6 +317,21 @@ footer a {
   color: #fff;
 }
 
+footer input[type="email"] {
+  width: calc(100% - 140px);
+  float: left;
+  border: 2px solid #fff;
+  border-radius: 4px 0 0 4px;
+}
+
+footer input[type="submit"] {
+  float: left;
+  width: 140px;
+  border: 2px solid #fff;
+  border-radius: 0 4px 4px 0;
+  padding: 10px;
+}
+
 @media (min-width: 600px) {
   nav ul {
     width: auto;
