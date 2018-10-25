@@ -1,27 +1,59 @@
+.dashboard {
+  background-color: $blue2;
+  color: #fff;
+}
+
 .stats {
   padding-bottom: 10px;
+  display: flex;
 }
+
 .stat__info {
   display: block;
   text-align: center;
   font-size: 0.8em;
   color: rgba(255, 255, 255, 0.7);
 }
+
 .stat {
-  width: 100%;
-  display: block;
   text-align: center;
-  padding: 20px;
-  border-bottom: 2px solid #d68522;
+  padding: 10px;
   margin-right: 2px;
 }
+
 .stat:last-of-type {
   border-bottom: none;
 }
+
 .stat__number {
   font-weight: 800;
-  font-size: 3em;
+  font-size: 2em;
 }
+
 .stat__label {
   display: block;
+}
+
+@media (min-width: 600px) {
+  .stats {
+    display: table;
+    width: 100%;
+    padding-bottom: 10px;
+  }
+
+  .stat {
+    display: table-cell;
+    width: 33%;
+    text-align: center;
+    padding: 20px;
+    border-right: 2px solid $yellow;
+    border-bottom: none;
+    margin-right: 2px;
+  }
+  .stat:last-of-type {
+    border-right: none;
+  }
+  .stat__info {
+    text-align: right;
+  }
 }

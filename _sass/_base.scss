@@ -2,13 +2,14 @@ $yellow: #d68522;
 $red: #db5653;
 $blue: #35a8ae;
 $gray1: #333;
-
+$gray2: #efeeee;
+$white: #fff;
+$blue2: #3d74c8;
 * {
   box-sizing: border-box;
 }
 
 body {
-  border-top: 10px solid $red;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -18,7 +19,8 @@ a {
 
 h1 {
   text-align: center;
-  color: #3dc1c8;
+  color: $blue;
+  margin: 20px 0;
 }
 
 h1,
@@ -57,29 +59,24 @@ section {
   margin: 0 auto;
 }
 
-.header {
-  background-color: #f0a241;
-  color: #fff;
-}
-
 .report {
-  background: #efeeee;
-  color: #333;
+  background: $gray2;
+  color: $gray1;
   padding-bottom: 40px;
 }
 
 .report h2 {
-  border-bottom: 4px solid #333;
+  border-bottom: 4px solid $gray1;
   padding-bottom: 8px;
 }
 
 .donate {
-  background: #db5653;
+  background: $red;
   color: #fff;
 }
 
 .donate h2 {
-  border-bottom: 4px solid #fff;
+  border-bottom: 4px solid $white;
   padding-bottom: 8px;
 }
 
@@ -94,7 +91,7 @@ section {
 }
 
 footer {
-  background: #3dc1c8;
+  background: $blue;
   border-top: 5px solid $blue;
   color: #fff;
   padding: 20px 0;
@@ -105,49 +102,17 @@ footer a {
   color: #fff;
 }
 
-@media (min-width: 600px) {
-  nav ul {
-    width: auto;
-  }
-  nav li {
-    width: 50%;
-    display: table-cell;
-  }
-  .stats {
-    display: table;
-    width: 100%;
-    padding-bottom: 10px;
-  }
-  .stat {
-    display: table-cell;
-    width: 33%;
-    text-align: center;
-    padding: 20px;
-    border-right: 2px solid $yellow;
-    border-bottom: none;
-    margin-right: 2px;
-  }
-  .stat:last-of-type {
-    border-right: none;
-  }
-  .stat__info {
-    text-align: right;
-  }
-}
-
 @media (min-width: 769px) {
   h1 {
     font-size: 3em;
   }
-  h1 .emoji,
-  h1 .emoji:first-of-type {
-    display: inline;
-  }
+
   p,
   li {
     font-size: 1.2em;
   }
 }
+
 #payment-request-button {
   margin-top: 18px;
 }

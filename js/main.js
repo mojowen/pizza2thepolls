@@ -1,35 +1,53 @@
-var totals_url = "https://spreadsheets.google.com/feeds/list/1mxmW0YljLEcNP1BUJoUlAEtzzE0FXwbaDBPN26dlloo/1/public/basic?alt=json";
-var adresses_url = "https://spreadsheets.google.com/feeds/list/1mxmW0YljLEcNP1BUJoUlAEtzzE0FXwbaDBPN26dlloo/2/public/basic?alt=json";
-var now = new Date;
+var totals_url =
+  "https://spreadsheets.google.com/feeds/list/1mxmW0YljLEcNP1BUJoUlAEtzzE0FXwbaDBPN26dlloo/1/public/basic?alt=json";
+var adresses_url =
+  "https://spreadsheets.google.com/feeds/list/1mxmW0YljLEcNP1BUJoUlAEtzzE0FXwbaDBPN26dlloo/2/public/basic?alt=json";
+var now = new Date();
 var addresses = [];
 var directPay;
 
-tinyGET(totals_url,function(data) {
-  var now = new Date()
-  var raised = '$' + data.feed.entry[0].content['$t'].split(': ')[1];
-  var pizzas = data.feed.entry[1].content['$t'].split(': ')[1];
-  var remaining = '$' + data.feed.entry[2].content['$t'].split(': ')[1];
-  document.getElementById('stat-raised').innerHTML = raised;
-  document.getElementById('stat-pizzas').innerHTML = pizzas;
-  document.getElementById('stat-remaining').innerHTML = remaining;
-  document.getElementById('stat-info').innerHTML = 'As of ' + now.toLocaleString();
+var menuToggle = document.getElementById("menu-toggle");
+var menu = document.getElementById("menu");
+menuToggle.addEventListener("click", function() {
+  if (menu.getAttribute("aria-hidden") === "true") {
+    menu.setAttribute("aria-hidden", "false");
+  } else {
+    menu.setAttribute("aria-hidden", "true");
+  }
+});
+
+tinyGET(totals_url, function(data) {
+  var now = new Date();
+  var raised = "$" + data.feed.entry[0].content["$t"].split(": ")[1];
+  var pizzas = data.feed.entry[1].content["$t"].split(": ")[1];
+  var remaining = "$" + data.feed.entry[2].content["$t"].split(": ")[1];
+  document.getElementById("stat-raised").innerHTML = raised;
+  document.getElementById("stat-pizzas").innerHTML = pizzas;
+  document.getElementById("stat-remaining").innerHTML = remaining;
+  document.getElementById("stat-info").innerHTML =
+    "As of " + now.toLocaleString();
 });
 
 tinyGET(adresses_url, function(data) {
   for (var i = 0; i < data.feed.entry.length; i++) {
     var content = data.feed.entry[i].content["$t"],
-        address = {},
-        keys = content.match(/[a-z]*(?=:\s)/g).filter( function(el) { return el.length > 0 })
-        values = content.split(/\,\s[a-z]*\:\s/).filter( function(el) { return el.length > 0 })
+      address = {},
+      keys = content.match(/[a-z]*(?=:\s)/g).filter(function(el) {
+        return el.length > 0;
+      });
+    values = content.split(/\,\s[a-z]*\:\s/).filter(function(el) {
+      return el.length > 0;
+    });
     for (var j = 0; j < keys.length; j++) {
       var key = keys[j];
-      address[key] = values[j].replace(key+": ", "");
+      address[key] = values[j].replace(key + ": ", "");
     }
-    try { address.timestamp = new Date(address.timestamp) } catch(e) { }
-    addresses.push(address)
+    try {
+      address.timestamp = new Date(address.timestamp);
+    } catch (e) {}
+    addresses.push(address);
   }
-})
-
+});
 
 var tokenHandler = function(token, callback) {
   tinyPOST(
@@ -76,15 +94,18 @@ var enableDirectPay = function(amount, pizzas) {
 
     directPay.canMakePayment().then(function(result) {
       if (result) {
-        document.getElementById('payment-request-button').style.display = 'block';
-        prButton.mount('#payment-request-button');
+        document.getElementById("payment-request-button").style.display =
+          "block";
+        prButton.mount("#payment-request-button");
       } else {
         document.getElementById("payment-request-button").style.display =
           "none";
       }
     });
     directPay.on("token", function(ev) {
-      tokenHandler(ev.token, function() { ev.complete('success'); });
+      tokenHandler(ev.token, function() {
+        ev.complete("success");
+      });
     });
   }
 };
@@ -163,12 +184,12 @@ var componentForm = {
   administrative_area_level_1: "short_name",
   postal_code: "short_name",
   premise: "name",
-  formatted_address: "formatted_address",
+  formatted_address: "formatted_address"
 };
 
 function toggleAddressVisibility() {
   const address = document.getElementById("address");
-  if ( address.getAttribute("hidden") !== null) {
+  if (address.getAttribute("hidden") !== null) {
     address.removeAttribute("hidden");
   } else {
     address.setAttribute("hidden", "");
@@ -180,7 +201,7 @@ function initAutocomplete() {
   // location types.
   autocomplete = new google.maps.places.Autocomplete(
     document.getElementById("autocomplete"),
-    { types: ["establishment"], componentRestrictions: {'country': 'us'} },
+    { types: ["establishment"], componentRestrictions: { country: "us" } }
   );
 
   // When the user selects an address from the dropdown, populate the address
@@ -201,8 +222,8 @@ function fillInAddress() {
   // Get each component of the address from the place details
   // and fill the corresponding field on the form.
   for (var i = 0; i < place.address_components.length; i++) {
-      var addressType = place.address_components[i].types[0],
-          val = place.address_components[i][componentForm[addressType]];
+    var addressType = place.address_components[i].types[0],
+      val = place.address_components[i][componentForm[addressType]];
     if (componentForm[addressType]) {
       document.getElementById(addressType).value = val;
     }
@@ -235,7 +256,7 @@ function handleSubmit() {
   -
   */
   var data = {};
-  submit_message.textContent = '';
+  submit_message.textContent = "";
 
   Array.prototype.map.call(
     document.getElementById("form").querySelectorAll("input"),
@@ -243,20 +264,23 @@ function handleSubmit() {
       data[el.name] = el.value;
     }
   );
-  if( !data.full_place || !data.social_link ) {
-      submit_message.textContent = 'Hmmm you are missing some crucial details there'
-      return false;
+  if (!data.full_place || !data.social_link) {
+    submit_message.textContent =
+      "Hmmm you are missing some crucial details there";
+    return false;
   }
   tinyPOST(
-    'https://hooks.zapier.com/hooks/catch/2966893/qk6is7/',
+    "https://hooks.zapier.com/hooks/catch/2966893/qk6is7/",
     data,
     function(resp) {
-      toggleAddressVisibility()
+      toggleAddressVisibility();
       Array.prototype.map.call(
         document.getElementById("form").querySelectorAll("input"),
-        function(el) { el.value = '';}
+        function(el) {
+          el.value = "";
+        }
       );
-      submit_message.textContent = 'Thanks! We will get right on that';
+      submit_message.textContent = "Thanks! We will get right on that";
     }
-  )
+  );
 }
