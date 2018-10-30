@@ -1,5 +1,5 @@
 var totals_url =
-  "https://spreadsheets.google.com/feeds/list/1mxmW0YljLEcNP1BUJoUlAEtzzE0FXwbaDBPN26dlloo/1/public/basic?alt=json";
+  "https://spreadsheets.google.com/feeds/list/1INLcG389953CjGJVkUgd3ufz0yEOUGpoLhIP5AZrV_0/1/public/basic?alt=json";
 var adresses_url =
   "https://spreadsheets.google.com/feeds/list/1mxmW0YljLEcNP1BUJoUlAEtzzE0FXwbaDBPN26dlloo/2/public/basic?alt=json";
 var now = new Date();
@@ -18,11 +18,17 @@ menuToggle.addEventListener("click", function() {
 
 tinyGET(totals_url, function(data) {
   var now = new Date();
-  var raised = "$" + data.feed.entry[0].content["$t"].split(": ")[1];
-  var pizzas = data.feed.entry[1].content["$t"].split(": ")[1];
-  var remaining = "$" + data.feed.entry[2].content["$t"].split(": ")[1];
-  document.getElementById("stat-raised").innerHTML = raised;
+  var pizzas = data.feed.entry[0].content["$t"].split(": ")[1];
+  var locations = data.feed.entry[1].content["$t"].split(": ")[1];
+  var states = data.feed.entry[2].content["$t"].split(": ")[1];
+  var raised = "$" + data.feed.entry[3].content["$t"].split(": ")[1];
+  var raisedAllTime = "$" + data.feed.entry[4].content["$t"].split(": ")[1];
+  var remaining = "$" + data.feed.entry[5].content["$t"].split(": ")[1];
   document.getElementById("stat-pizzas").innerHTML = pizzas;
+  document.getElementById("stat-locations").innerHTML = locations;
+  document.getElementById("stat-states").innerHTML = states;
+  document.getElementById("stat-raised").innerHTML = raised;
+  document.getElementById("stat-raised-alltime").innerHTML = raisedAllTime;
   document.getElementById("stat-remaining").innerHTML = remaining;
   document.getElementById("stat-info").innerHTML =
     "As of " + now.toLocaleString();

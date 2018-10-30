@@ -11,7 +11,6 @@ $blue2: #3d74c8;
 }
 
 body {
-  border-top: 10px solid #db5653;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -38,12 +37,8 @@ p {
   line-height: 1.5;
 }
 
-h1 .emoji {
-  display: block;
-}
-
-h1 .emoji:first-of-type {
-  display: none;
+header h1 a {
+  text-decoration: none;
 }
 
 .clearfix:after {
@@ -280,7 +275,6 @@ input[type="radio"]:focus + label {
   display: block;
   text-align: center;
   padding: 20px;
-  border-bottom: 2px solid #d68522;
   margin-right: 2px;
 }
 
