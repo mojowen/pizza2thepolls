@@ -49,6 +49,13 @@ tinyGET(adresses_url, function(data) {
   }
 });
 
+var showConfirmation = function(amount) {
+  var message = `Thanks for donating $${amount} to Pizza to the Polls. You'll receive a receipt in your email soon.`;
+  document.getElementById("donate-confirmation-message").innerHTML = message;
+  document.getElementById("donate-confirmation").removeAttribute("hidden");
+  document.getElementById("donate-form").setAttribute("hidden", null);
+};
+
 var tokenHandler = function(token, callback) {
   tinyPOST(
     "https://docs.google.com/forms/d/e/1FAIpQLSf5RPXqXaVk8KwKC7kzthukydvA9vL7_bP9V9O9PIAiXl14cQ/formResponse",
@@ -61,6 +68,8 @@ var tokenHandler = function(token, callback) {
     },
     callback || function() {}
   );
+
+  showConfirmation(window.amount.toString());
 };
 
 var enableDirectPay = function(amount, pizzas) {
@@ -94,9 +103,9 @@ var enableDirectPay = function(amount, pizzas) {
 
     directPay.canMakePayment().then(function(result) {
       if (result) {
-        document.getElementById("payment-request-button").style.display =
-          "block";
-        prButton.mount("#payment-request-button");
+        // dobt show apple pay button
+        // document.getElementById('payment-request-button').style.display = 'block';
+        // prButton.mount('#payment-request-button');
       } else {
         document.getElementById("payment-request-button").style.display =
           "none";
