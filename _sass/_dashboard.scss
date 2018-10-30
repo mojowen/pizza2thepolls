@@ -1,9 +1,24 @@
 .dashboard {
   background-color: $blue2;
   color: #fff;
+  text-align: center;
+  padding-bottom: 40px;
+
+  h2 {
+    position: relative;
+    top: 15px;
+    display: inline;
+    background: $blue2;
+    padding: 0 20px;
+  }
 }
 
 .stats {
+  border: 1px solid $white;
+  padding: 30px;
+}
+
+.stats__row {
   padding-bottom: 10px;
   display: flex;
 }
@@ -38,7 +53,6 @@
   .stats {
     display: table;
     width: 100%;
-    padding-bottom: 10px;
   }
 
   .stat {
@@ -46,7 +60,6 @@
     width: 33%;
     text-align: center;
     padding: 20px;
-    border-right: 2px solid $white;
     border-bottom: none;
     margin-right: 2px;
   }

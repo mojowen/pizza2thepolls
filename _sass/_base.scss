@@ -259,36 +259,8 @@ input[type="radio"]:focus + label {
   cursor: default;
 }
 
-.stats {
-  padding-bottom: 10px;
-}
-
-.stat__info {
-  display: block;
-  text-align: center;
-  font-size: 0.8em;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.stat {
-  width: 100%;
-  display: block;
-  text-align: center;
-  padding: 20px;
-  margin-right: 2px;
-}
-
-.stat:last-of-type {
-  border-bottom: none;
-}
-
-.stat__number {
-  font-weight: 800;
-  font-size: 3em;
-}
-
-.stat__label {
-  display: block;
+.hero {
+  color: $blue2;
 }
 
 .about h2 {
@@ -332,30 +304,6 @@ footer input[type="submit"] {
   nav li {
     width: 50%;
     display: table-cell;
-  }
-
-  .stats {
-    display: table;
-    width: 100%;
-    padding-bottom: 10px;
-  }
-
-  .stat {
-    display: table-cell;
-    width: 33%;
-    text-align: center;
-    padding: 20px;
-    border-right: 2px solid #d68522;
-    border-bottom: none;
-    margin-right: 2px;
-  }
-
-  .stat:last-of-type {
-    border-right: none;
-  }
-
-  .stat__info {
-    text-align: right;
   }
 }
 
