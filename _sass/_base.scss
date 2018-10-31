@@ -212,7 +212,7 @@ input[type="radio"] {
 }
 
 .radio {
-  border: 1px solid #fff;
+  background-color: rgba($white, 0.3);
   border-radius: 4px;
   padding: 20px;
   cursor: pointer;
@@ -245,8 +245,8 @@ input[type="radio"] {
 
 input[type="radio"]:checked + label,
 input[type="radio"]:focus + label {
-  background-color: #fff;
-  color: #db5653;
+  background-color: $blue2;
+  color: $white;
 }
 
 .submit {
@@ -260,7 +260,14 @@ input[type="radio"]:focus + label {
 }
 
 .hero {
-  color: $blue2;
+  background: $blue2;
+  color: #fff;
+  padding: 20px;
+}
+
+.page h1 {
+  text-align: left;
+  font-size: 2em;
 }
 
 .about h2 {

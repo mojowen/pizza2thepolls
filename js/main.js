@@ -1,5 +1,5 @@
 var totals_url =
-  "https://spreadsheets.google.com/feeds/list/1INLcG389953CjGJVkUgd3ufz0yEOUGpoLhIP5AZrV_0/1/public/basic?alt=json";
+  "https://spreadsheets.google.com/feeds/list/1mxmW0YljLEcNP1BUJoUlAEtzzE0FXwbaDBPN26dlloo/3/public/basic?alt=json";
 var adresses_url =
   "https://spreadsheets.google.com/feeds/list/1mxmW0YljLEcNP1BUJoUlAEtzzE0FXwbaDBPN26dlloo/2/public/basic?alt=json";
 var now = new Date();
@@ -152,7 +152,7 @@ var getAmount = function() {
 
 document.getElementById("donate-form").addEventListener("change", function(e) {
   var amount = getAmount(),
-    pizzas = Math.ceil(amount / 100 / 13.5);
+    pizzas = Math.ceil(amount / 100 / 20);
 
   if (amount) {
     document.getElementById("checkout").classList.remove("is-disabled");
@@ -164,7 +164,7 @@ document.getElementById("donate-form").addEventListener("change", function(e) {
 
 document.getElementById("checkout").addEventListener("click", function(e) {
   var amount = getAmount(),
-    pizzas = Math.ceil(amount / 100 / 13.5);
+    pizzas = Math.ceil(amount / 100 / 20);
 
   if (amount) {
     // Open Checkout with further options:
