@@ -12,6 +12,7 @@ $blue2: #3d74c8;
 
 body {
   font-family: "Open Sans", sans-serif;
+  padding-top: 76px;
 }
 
 a {
@@ -262,7 +263,7 @@ input[type="radio"]:focus + label {
 .hero {
   background: $blue2;
   color: #fff;
-  padding: 20px;
+  padding: 20px 0;
 }
 
 .page h1 {
@@ -304,13 +305,8 @@ footer input[type="submit"] {
 }
 
 @media (min-width: 600px) {
-  nav ul {
-    width: auto;
-  }
-
-  nav li {
-    width: 50%;
-    display: table-cell;
+  body {
+    padding-top: 0;
   }
 }
 

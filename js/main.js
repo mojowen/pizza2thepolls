@@ -1,13 +1,21 @@
 var totals_url =
-  "https://spreadsheets.google.com/feeds/list/1mxmW0YljLEcNP1BUJoUlAEtzzE0FXwbaDBPN26dlloo/3/public/basic?alt=json";
+  "https://spreadsheets.google.com/feeds/list/1mxmW0YljLEcNP1BUJoUlAEtzzE0FXwbaDBPN26dlloo/2/public/basic?alt=json";
 var adresses_url =
   "https://spreadsheets.google.com/feeds/list/1mxmW0YljLEcNP1BUJoUlAEtzzE0FXwbaDBPN26dlloo/2/public/basic?alt=json";
+var upcoming_url =
+  "https://spreadsheets.google.com/feeds/list/1mxmW0YljLEcNP1BUJoUlAEtzzE0FXwbaDBPN26dlloo/3/public/basic?alt=json";
+var deliveries_url =
+  "https://spreadsheets.google.com/feeds/list/1mxmW0YljLEcNP1BUJoUlAEtzzE0FXwbaDBPN26dlloo/4/public/basic?alt=json";
 var now = new Date();
 var addresses = [];
 var directPay;
 
+/****************************
+Site nav
+****************************/
 var menuToggle = document.getElementById("menu-toggle");
 var menu = document.getElementById("menu");
+
 menuToggle.addEventListener("click", function() {
   if (menu.getAttribute("aria-hidden") === "true") {
     menu.setAttribute("aria-hidden", "false");
@@ -15,6 +23,52 @@ menuToggle.addEventListener("click", function() {
     menu.setAttribute("aria-hidden", "true");
   }
 });
+
+const checkWidthAndToggleMenu = () => {
+  if (window.innerWidth > 600) {
+    menu.setAttribute("aria-hidden", "false");
+  } else {
+    menu.setAttribute("aria-hidden", "true");
+  }
+};
+
+window.addEventListener("resize", e => {
+  checkWidthAndToggleMenu();
+});
+
+checkWidthAndToggleMenu();
+
+/****************************
+Locations
+****************************/
+const concatenateLocation = pieces => {
+  let location = `${pieces.address} ${pieces.city}, ${pieces.state} <br> ${
+    pieces.date
+  }, ${pieces.time}`;
+
+  if (pieces.pizza) {
+    return `<a href="${pieces.report} target="blank" title="View report">${
+      pieces.pizza
+    } pizzas to ${location}</a>`;
+  } else {
+    return `<a href="${
+      pieces.report
+    } target="blank" title="View report">${location}</a>`;
+  }
+};
+
+const parseLocations = (data, listID) => {
+  data.feed.entry.map(entry => {
+    let pieces = { address: entry.title["$t"] };
+    entry.content["$t"].split(", ").map(piece => {
+      const key = piece.split(": ")[0];
+      const value = piece.split(": ")[1];
+      pieces[key] = value;
+    });
+    const location = concatenateLocation(pieces);
+    document.getElementById(listID).innerHTML += `<li>${location}</li>`;
+  });
+};
 
 tinyGET(totals_url, function(data) {
   var now = new Date();
@@ -32,6 +86,23 @@ tinyGET(totals_url, function(data) {
   document.getElementById("stat-remaining").innerHTML = remaining;
   document.getElementById("stat-info").innerHTML =
     "As of " + now.toLocaleString();
+});
+
+tinyGET(upcoming_url, data => {
+  if (data.feed.entry) {
+    parseLocations(data, "upcoming-list");
+  } else {
+    document.getElementById("upcoming-list").innerHTML = "<li>None yet</li>";
+  }
+});
+
+tinyGET(deliveries_url, data => {
+  if (data.feed.entry) {
+    console.log(data.feed.entry);
+    parseLocations(data, "deliveries-list");
+  } else {
+    document.getElementById("deliveries-list").innerHTML = "<li>None yet</li>";
+  }
 });
 
 tinyGET(adresses_url, function(data) {

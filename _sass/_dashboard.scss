@@ -2,7 +2,7 @@
   background-color: $blue2;
   color: #fff;
   text-align: center;
-  padding-bottom: 40px;
+  padding: 0 0 40px 0;
 
   h2 {
     position: relative;
@@ -15,12 +15,19 @@
 
 .stats {
   border: 1px solid $white;
-  padding: 30px;
+  padding: 20px;
+
+  a {
+    color: $white;
+    text-decoration: underline;
+    display: inline-block;
+  }
 }
 
 .stats__row {
   padding-bottom: 10px;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .stat__info {
@@ -28,19 +35,12 @@
   text-align: center;
   font-size: 0.8em;
   color: rgba(255, 255, 255, 0.7);
-
-  a {
-    color: $white;
-    text-decoration: underline;
-    margin-top: 10px;
-    display: inline-block;
-  }
 }
 
 .stat {
   text-align: center;
   padding: 10px;
-  margin-right: 2px;
+  width: 50%;
 }
 
 .stat:last-of-type {
@@ -56,10 +56,40 @@
   display: block;
 }
 
+.locations {
+  text-align: left;
+
+  h3 {
+    margin: 0 0 10px;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 40px;
+  }
+
+  li {
+    font-size: 14px;
+
+    a {
+      border-left: 4px solid $white;
+      padding: 5px 10px;
+      margin-bottom: 5px;
+      text-decoration: none;
+      display: block;
+
+      &:hover {
+        border-left: 4px solid $yellow;
+      }
+    }
+  }
+}
+
 @media (min-width: 600px) {
-  .stats {
-    display: table;
-    width: 100%;
+  .stats__row {
+    display: flex;
   }
 
   .stat {
@@ -70,10 +100,18 @@
     border-bottom: none;
     margin-right: 2px;
   }
+
   .stat:last-of-type {
     border-right: none;
   }
   .stat__info {
     text-align: right;
+  }
+}
+
+@media (min-width: 769px) {
+  .locations__list {
+    width: 50%;
+    padding: 0 10px;
   }
 }
