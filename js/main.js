@@ -1,13 +1,10 @@
 var totals_url =
   "https://spreadsheets.google.com/feeds/list/1mxmW0YljLEcNP1BUJoUlAEtzzE0FXwbaDBPN26dlloo/2/public/basic?alt=json";
-var adresses_url =
-  "https://spreadsheets.google.com/feeds/list/1mxmW0YljLEcNP1BUJoUlAEtzzE0FXwbaDBPN26dlloo/2/public/basic?alt=json";
 var upcoming_url =
   "https://spreadsheets.google.com/feeds/list/1mxmW0YljLEcNP1BUJoUlAEtzzE0FXwbaDBPN26dlloo/3/public/basic?alt=json";
 var deliveries_url =
   "https://spreadsheets.google.com/feeds/list/1mxmW0YljLEcNP1BUJoUlAEtzzE0FXwbaDBPN26dlloo/4/public/basic?alt=json";
 var now = new Date();
-var addresses = [];
 var directPay;
 
 /****************************
@@ -102,27 +99,6 @@ tinyGET(deliveries_url, data => {
     parseLocations(data, "deliveries-list");
   } else {
     document.getElementById("deliveries-list").innerHTML = "<li>None yet</li>";
-  }
-});
-
-tinyGET(adresses_url, function(data) {
-  for (var i = 0; i < data.feed.entry.length; i++) {
-    var content = data.feed.entry[i].content["$t"],
-      address = {},
-      keys = content.match(/[a-z]*(?=:\s)/g).filter(function(el) {
-        return el.length > 0;
-      });
-    values = content.split(/\,\s[a-z]*\:\s/).filter(function(el) {
-      return el.length > 0;
-    });
-    for (var j = 0; j < keys.length; j++) {
-      var key = keys[j];
-      address[key] = values[j].replace(key + ": ", "");
-    }
-    try {
-      address.timestamp = new Date(address.timestamp);
-    } catch (e) {}
-    addresses.push(address);
   }
 });
 
