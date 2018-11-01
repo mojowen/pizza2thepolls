@@ -88,6 +88,8 @@ tinyGET(totals_url, function(data) {
 tinyGET(upcoming_url, data => {
   if (data.feed.entry) {
     parseLocations(data, "upcoming-list");
+    document.getElementById("upcoming-count").innerHTML =
+      data.feed.entry.length + 1;
   } else {
     document.getElementById("upcoming-list").innerHTML = "<li>None yet</li>";
   }
@@ -95,8 +97,9 @@ tinyGET(upcoming_url, data => {
 
 tinyGET(deliveries_url, data => {
   if (data.feed.entry) {
-    console.log(data.feed.entry);
     parseLocations(data, "deliveries-list");
+    document.getElementById("delivery-count").innerHTML =
+      data.feed.entry.length + 1;
   } else {
     document.getElementById("deliveries-list").innerHTML = "<li>None yet</li>";
   }

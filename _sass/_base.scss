@@ -1,9 +1,10 @@
-$yellow: #d68522;
+$yellow: #f0a241;
 $red: #db5653;
 $blue: #35a8ae;
-$gray1: #333;
+$gray1: #242429;
 $gray2: #efeeee;
 $white: #fff;
+$offwhite: #f9f8fb;
 $blue2: #3d74c8;
 
 * {
@@ -50,41 +51,6 @@ header h1 a {
 
 [hidden] {
   display: none;
-}
-
-nav {
-  padding: 4px 0;
-  margin-bottom: 20px;
-}
-
-nav ul {
-  width: 100%;
-  list-style-type: none;
-  display: table;
-  padding: 0 !important;
-}
-
-nav li {
-  padding: 0 5px;
-  margin-bottom: 4px;
-}
-
-nav a {
-  transition: background-color 0.1s ease-in;
-  display: block;
-  background-color: #db5653;
-  border-radius: 4px;
-  color: #fff;
-  font-weight: bold;
-  font-size: 1.2em;
-  padding: 10px;
-  margin: 0;
-  text-decoration: none;
-  text-align: center;
-}
-
-nav a:hover {
-  background: #db5653;
 }
 
 .form-item {
@@ -157,8 +123,8 @@ section {
 }
 
 .report {
-  background: #efeeee;
-  color: #333;
+  background: $offwhite;
+  color: $gray1;
   padding-bottom: 40px;
 }
 
@@ -304,9 +270,42 @@ footer input[type="submit"] {
   padding: 10px;
 }
 
+.footer-nav {
+  position: fixed;
+  background: $yellow;
+  z-index: 900;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+
+  a {
+    display: inline-block;
+    width: 50%;
+    padding: 20px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: $white;
+    margin: 0;
+
+    &:first-child {
+      border-right: 1px solid darken($yellow, 10%);
+    }
+
+    &:hover {
+      background-color: darken($yellow, 10%);
+    }
+  }
+}
+
 @media (min-width: 600px) {
   body {
     padding-top: 0;
+  }
+
+  .footer-nav {
+    display: none;
   }
 }
 
