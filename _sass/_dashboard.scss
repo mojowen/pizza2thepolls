@@ -1,24 +1,51 @@
+$border: $blue3;
+$bg: $blue;
+
+.hero {
+  background: $bg;
+  color: $white;
+  padding: 20px 0;
+}
+
+.dashboard-bg {
+  background: $blue3;
+  width: 100%;
+  height: 53%;
+  position: absolute;
+  bottom: 0;
+  z-index: 0;
+  border-top: 15px solid $border;
+}
+
 .dashboard {
-  background-color: $blue2;
-  color: #fff;
+  background: $bg;
+  color: $blue3;
   text-align: center;
-  padding: 0 0 40px 0;
+  position: relative;
+  padding: 0 0 20px 0;
 
   h2 {
     position: relative;
-    top: 15px;
-    display: inline;
-    background: $blue2;
-    padding: 0 20px;
+    display: block;
+    padding: 0 0 20px 0;
+    margin: 0;
+    z-index: 101;
+    border-bottom: 4px solid $blue3;
+    font-size: 32px;
   }
 }
 
 .stats {
-  border: 1px solid $white;
   padding: 20px;
+  background: $gray1;
+  color: $blue3;
+  position: relative;
+  z-index: 100;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px 0 rgba($blue3, 0.2);
 
   a {
-    color: $white;
+    color: inherit;
     text-decoration: underline;
     display: inline-block;
   }
@@ -28,6 +55,12 @@
   padding-bottom: 10px;
   display: flex;
   flex-wrap: wrap;
+
+  &:first-of-type {
+    padding: 20px 0;
+    border-bottom: 4px solid $blue3;
+    margin-bottom: 40px;
+  }
 }
 
 .stat__info {
@@ -48,8 +81,9 @@
 }
 
 .stat__number {
-  font-weight: 800;
+  // font-weight: 800;
   font-size: 2.5em;
+  font-family: "Fredoka One", cursive;
 }
 
 .stat__label {
@@ -77,11 +111,11 @@
     font-size: 14px;
 
     a {
-      border-left: 4px solid $white;
       padding: 5px 10px;
       margin-bottom: 5px;
       text-decoration: none;
       display: block;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
       &:hover {
         border-left: 4px solid $yellow;

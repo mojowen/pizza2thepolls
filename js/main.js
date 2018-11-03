@@ -39,7 +39,7 @@ checkWidthAndToggleMenu();
 Locations
 ****************************/
 const concatenateLocation = pieces => {
-  let location = `${pieces.address} ${pieces.city}, ${pieces.state} <br> ${
+  let location = `${pieces.address} ${pieces.city}, ${pieces.state} on ${
     pieces.date
   }, ${pieces.time}`;
 
@@ -55,7 +55,7 @@ const concatenateLocation = pieces => {
 };
 
 const parseLocations = (data, listID) => {
-  data.feed.entry.map(entry => {
+  data.feed.entry.reverse().map(entry => {
     let pieces = { address: entry.title["$t"] };
     entry.content["$t"].split(", ").map(piece => {
       const key = piece.split(": ")[0];

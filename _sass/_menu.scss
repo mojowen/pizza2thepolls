@@ -9,6 +9,7 @@
 
   h1 {
     margin: 0;
+    font-size: 48px;
   }
 }
 
@@ -16,7 +17,7 @@
   list-style-type: none;
   margin: 0;
   padding: 20px;
-  background: #f0a241;
+  background: $yellow;
   position: absolute;
   top: 76px;
   width: 100%;
