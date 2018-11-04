@@ -5,7 +5,9 @@ title: Press
 
 # For the press
 
-If you'd like to get in touch with us for a story send an email to [press@polls.pizza](mailto:press@polls.pizza). [Learn more about our story](/about).
+If you'd like to get in touch with us for a story send an email to [press@polls.pizza](mailto:press@polls.pizza).
+
+[Learn more about our story](/about).
 
 ## 2018 Press
 

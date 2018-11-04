@@ -48,10 +48,11 @@ header h1 a {
   text-decoration: none;
 }
 
+img {
+  max-width: 100%;
+}
+
 .display {
-  // font-family: "Ultra", cursive;
-  // font-family: "Fugaz One";
-  // font-family: "Vidaloka";
   font-family: "Fredoka One";
   font-weight: normal;
 }
@@ -168,6 +169,11 @@ section {
   color: #fff;
   background-image: url("/images/bg2.png");
   background-size: 400px;
+
+  img {
+    border-radius: 10px;
+    box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.2);
+  }
 }
 
 .donate h2 {
@@ -266,10 +272,22 @@ input[type="radio"]:focus + label {
   h1 {
     text-align: left;
     font-size: 2em;
+    color: #333;
   }
 
   h2 {
     margin-top: 60px;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.photo-grid {
+  img {
+    width: 24%;
+    height: auto;
   }
 }
 

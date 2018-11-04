@@ -5,6 +5,13 @@ title: About
 
 # About Pizza to the Polls
 
+<div class="photo-grid">
+    <img alt="Photo of pizzas at polling places" src="/images/pics/photo_1.jpg">
+    <img alt="Photo of pizzas at polling places" src="/images/pics/photo_2.jpg">
+    <img alt="Photo of pizzas at polling places" src="/images/pics/photo_3.jpg">
+    <img alt="Photo of pizzas at polling places" src="/images/pics/photo_4.jpg">
+</div>
+
 Americans are hungry for democracy and are turning out in record numbers to vote. But that means long lines and sometimes empty stomachs, which might discourage these brave patriots from performing their civic duty.
 
 Fortunately Pizza to the Polls is here to deliver the one thing that pairs so perfectly with freedom: piping hot 'za. Send us reports of long lines and we'll send in the delicious reinforcements.

@@ -1,8 +1,10 @@
 .header {
+  border-top: 10px solid $red;
   position: sticky;
-  border-bottom: 4px solid $yellow;
   width: 100%;
-  background: $white;
+  background-color: $white;
+  // background-image: url("/images/bg3.png");
+  background-size: 200px;
   top: 0;
   z-index: 1000;
   padding: 20px 0;
