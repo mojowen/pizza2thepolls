@@ -8,6 +8,7 @@ var deliveries_url =
   "https://spreadsheets.google.com/feeds/list/1mxmW0YljLEcNP1BUJoUlAEtzzE0FXwbaDBPN26dlloo/4/public/basic?alt=json";
 var now = new Date();
 var directPay;
+var upcoming = [];
 
 /****************************
 Locations
@@ -29,7 +30,7 @@ const concatenateLocation = pieces => {
 };
 
 const parseLocations = (data, listID) => {
-  data.feed.entry.reverse().map(entry => {
+  return data.feed.entry.reverse().map(entry => {
     let pieces = { address: entry.title["$t"] };
     entry.content["$t"].split(", ").map(piece => {
       const key = piece.split(": ")[0];
@@ -38,6 +39,7 @@ const parseLocations = (data, listID) => {
     });
     const location = concatenateLocation(pieces);
     document.getElementById(listID).innerHTML += `<li>${location}</li>`;
+    return pieces;
   });
 };
 
@@ -61,7 +63,7 @@ tinyGET(totals_url, function(data) {
 
 tinyGET(upcoming_url, data => {
   if (data.feed.entry) {
-    parseLocations(data, "upcoming-list");
+    window.upcoming = parseLocations(data, "upcoming-list");
     document.getElementById("upcoming-count").innerHTML =
       data.feed.entry.length + 1;
   } else {
@@ -308,7 +310,13 @@ function handleSubmit() {
       "Hmmm you are missing some crucial details there";
     submit_message.removeAttribute("hidden");
     submit_message.classList.add("is-error");
-
+    document.location = '#submit_message';
+    return false;
+  }
+  if (  window.upcoming.find(el => { return el.address == data.formatted_address }) ) {
+    submit_message.textContent = "Thanks! We will get right on that";
+    submit_message.removeAttribute("hidden");
+    document.location = '#submit_message';
     return false;
   }
   tinyPOST(
@@ -325,6 +333,7 @@ function handleSubmit() {
       submit_message.textContent = "Thanks! We will get right on that";
       submit_message.removeAttribute("hidden");
       submit_message.classList.remove("is-error");
+      document.location = '#submit_message';
     }
   );
 }
