@@ -3,5 +3,5 @@ node_modules
 _site
 .vscode/settings.json
 .sass-cache
-*/**.DS_Store
-node_modules/
+.DS_Store
+node_modules
