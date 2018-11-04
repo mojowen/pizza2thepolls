@@ -14,11 +14,15 @@ $blue3: #29335c;
 
 body {
   font-family: "Work Sans", sans-serif;
-  padding-top: 76px;
 }
 
 a {
-  color: #db5653;
+  color: $red;
+  text-decoration: none;
+
+  &:hover {
+    color: $blue;
+  }
 }
 
 h1 {
@@ -143,7 +147,9 @@ section {
 }
 
 .report {
-  background: $blue3;
+  background-color: $blue3;
+  background-image: url("/images/bg.png");
+  background-size: 400px;
   color: $white;
   padding-bottom: 40px;
 }
@@ -154,8 +160,10 @@ section {
 }
 
 .donate {
-  background: #db5653;
+  background-color: $red;
   color: #fff;
+  background-image: url("/images/bg.png");
+  background-size: 400px;
 }
 
 .donate h2 {
@@ -199,16 +207,18 @@ input[type="radio"] {
 }
 
 .radio {
-  background-color: rgba($white, 0.3);
+  background-color: rgba($white, 0.9);
+  color: $red;
   border-radius: 4px;
   padding: 20px;
   cursor: pointer;
-  transition: background-color 0.1s ease-in;
+  transition: border-color 0.1s ease-in;
   margin-bottom: 10px;
+  border: 4px solid transparent;
 }
 
 .radio:hover {
-  background: rgba(255, 255, 255, 0.2);
+  border: 4px solid $blue;
 }
 
 .radio input {
@@ -246,9 +256,17 @@ input[type="radio"]:focus + label {
   cursor: default;
 }
 
-.page h1 {
-  text-align: left;
-  font-size: 2em;
+.page {
+  background: $gray1;
+
+  h1 {
+    text-align: left;
+    font-size: 2em;
+  }
+
+  h2 {
+    margin-top: 60px;
+  }
 }
 
 .about h2 {
@@ -283,42 +301,18 @@ footer input[type="submit"] {
   padding: 10px;
 }
 
-.footer-nav {
-  position: fixed;
-  background: $yellow;
-  z-index: 900;
-  bottom: 0;
-  width: 100%;
-  display: flex;
+.utility-nav {
+  padding: 0px 0 40px;
+  list-style-type: none;
 
-  a {
+  li {
     display: inline-block;
-    width: 50%;
-    padding: 20px;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    color: $white;
-    margin: 0;
+    padding: 0 30px;
+    font-size: 24px;
 
-    &:first-child {
-      border-right: 1px solid darken($yellow, 10%);
+    a {
+      text-decoration: none;
     }
-
-    &:hover {
-      background-color: darken($yellow, 10%);
-    }
-  }
-}
-
-@media (min-width: 600px) {
-  body {
-    padding-top: 0;
-  }
-
-  .footer-nav {
-    display: none;
   }
 }
 

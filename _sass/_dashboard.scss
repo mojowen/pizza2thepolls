@@ -1,24 +1,31 @@
 $border: $blue3;
-$bg: $blue;
 
 .hero {
-  background: $bg;
+  background-image: url("/images/bg.png");
+  background-size: 400px;
+  background-color: $yellow;
   color: $white;
-  padding: 20px 0;
+  padding: 20px 0 0 0;
+
+  p {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 30px 0;
+  }
 }
 
 .dashboard-bg {
-  background: $blue3;
+  background-color: $blue3;
+  background-image: url("/images/bg.png");
+  background-size: 400px;
   width: 100%;
   height: 53%;
   position: absolute;
   bottom: 0;
   z-index: 0;
-  border-top: 15px solid $border;
 }
 
 .dashboard {
-  background: $bg;
   color: $blue3;
   text-align: center;
   position: relative;
@@ -42,7 +49,7 @@ $bg: $blue;
   position: relative;
   z-index: 100;
   border-radius: 10px;
-  box-shadow: 0 10px 40px 0 rgba($blue3, 0.2);
+  box-shadow: 0 10px 40px 0 rgba($blue3, 0.3);
 
   a {
     color: inherit;
@@ -67,7 +74,6 @@ $bg: $blue;
   display: block;
   text-align: center;
   font-size: 0.8em;
-  color: rgba(255, 255, 255, 0.7);
 }
 
 .stat {
@@ -101,9 +107,9 @@ $bg: $blue;
     list-style-type: none;
     margin: 0;
     margin-bottom: 40px;
-    height: 200px;
+    max-height: 240px;
     overflow-y: scroll;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba($blue3, 0.2);
     padding: 10px;
   }
 
@@ -115,13 +121,17 @@ $bg: $blue;
       margin-bottom: 5px;
       text-decoration: none;
       display: block;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      border-bottom: 1px solid rgba($white, 0.8);
 
       &:hover {
         border-left: 4px solid $yellow;
       }
     }
   }
+}
+
+.locations__list {
+  width: 100%;
 }
 
 @media (min-width: 600px) {
@@ -147,6 +157,17 @@ $bg: $blue;
 }
 
 @media (min-width: 769px) {
+  .hero {
+    p {
+      padding: 20px 0;
+      font-size: 24px;
+    }
+  }
+
+  .locations ul {
+    height: 240px;
+  }
+
   .locations__list {
     width: 50%;
     padding: 0 10px;

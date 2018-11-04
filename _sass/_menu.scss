@@ -1,5 +1,5 @@
 .header {
-  position: fixed;
+  position: sticky;
   border-bottom: 4px solid $yellow;
   width: 100%;
   background: $white;
@@ -16,25 +16,30 @@
 .menu {
   list-style-type: none;
   margin: 0;
-  padding: 20px;
-  background: $yellow;
-  position: absolute;
-  top: 76px;
+  padding: 30px 0 10px 0;
   width: 100%;
   font-weight: bold;
   z-index: 1000;
+  text-align: center;
 
   &[aria-hidden="true"] {
     display: none;
   }
 
   li {
+    display: inline-block;
     padding-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0 10px;
   }
 
   a {
-    color: #fff;
     text-decoration: none;
+    background: $red;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
 
     &:hover {
       border-bottom: 2px solid $white;
@@ -54,7 +59,6 @@
 
 @media (min-width: 600px) {
   .header {
-    padding-bottom: 0;
     border-bottom: none;
     position: relative;
 

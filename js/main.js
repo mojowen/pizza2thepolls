@@ -10,30 +10,30 @@ var directPay;
 /****************************
 Site nav
 ****************************/
-var menuToggle = document.getElementById("menu-toggle");
-var menu = document.getElementById("menu");
+// var menuToggle = document.getElementById("menu-toggle");
+// var menu = document.getElementById("menu");
 
-menuToggle.addEventListener("click", function() {
-  if (menu.getAttribute("aria-hidden") === "true") {
-    menu.setAttribute("aria-hidden", "false");
-  } else {
-    menu.setAttribute("aria-hidden", "true");
-  }
-});
+// menuToggle.addEventListener("click", function() {
+//   if (menu.getAttribute("aria-hidden") === "true") {
+//     menu.setAttribute("aria-hidden", "false");
+//   } else {
+//     menu.setAttribute("aria-hidden", "true");
+//   }
+// });
 
-const checkWidthAndToggleMenu = () => {
-  if (window.innerWidth > 600) {
-    menu.setAttribute("aria-hidden", "false");
-  } else {
-    menu.setAttribute("aria-hidden", "true");
-  }
-};
+// const checkWidthAndToggleMenu = () => {
+//   if (window.innerWidth > 600) {
+//     menu.setAttribute("aria-hidden", "false");
+//   } else {
+//     menu.setAttribute("aria-hidden", "true");
+//   }
+// };
 
-window.addEventListener("resize", e => {
-  checkWidthAndToggleMenu();
-});
+// window.addEventListener("resize", e => {
+//   checkWidthAndToggleMenu();
+// });
 
-checkWidthAndToggleMenu();
+// checkWidthAndToggleMenu();
 
 /****************************
 Locations

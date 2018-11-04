@@ -5,6 +5,12 @@ title: About
 
 # About Pizza to the Polls
 
+Americans are hungry for democracy and are turning out in record numbers to vote. But that means long lines and sometimes empty stomachs, which might discourage these brave patriots from performing their civic duty.
+
+Fortunately Pizza to the Polls is here to deliver the one thing that pairs so perfectly with freedom: piping hot 'za. Send us reports of long lines and we'll send in the delicious reinforcements.
+
+## How it got started
+
 The weekend before election day, news spread of long lines across the country at early voting locations. Thus, Pizza to the Polls was born. In a few short hours, we came up with a name, a Twitter handle, a website, and a plan: Give pizza to the people. And give people watching at home a way to help.
 
 We took in reports of long lines and sent our lucky pizza delivery recruits out on their mission to save democracy. The feedback was immediate and immense: it fortified hungry voters in line, cheered up beleaguered poll workers, and put followers and friends to work finding other voters in need so we could send in more ‘za.
@@ -35,7 +41,7 @@ No. Ain't nothing partisan about trying to make voting less of a drag.
 
 ### Where do you get your pizza from?
 
-We use <a href="http://slicelife.com/">SliceLife</a> to find pizza places close to the lines since they let us tip and don't require someone to sign on delivery. We like to go with the local spots as much as possible.
+We use <a href="http://slicelife.com/">Slice</a> to find pizza places close to the lines since they let us tip and don't require someone to sign on delivery. We like to go with the local spots as much as possible.
 
 <hr>
 
