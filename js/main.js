@@ -238,7 +238,7 @@ function initAutocomplete() {
   // location types.
   autocomplete = new google.maps.places.Autocomplete(
     document.getElementById("autocomplete"),
-    { types: ["establishment"], componentRestrictions: { country: "us" } }
+    { types: ["geocode"], componentRestrictions: { country: "us" } }
   );
 
   // When the user selects an address from the dropdown, populate the address
