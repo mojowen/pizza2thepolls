@@ -6,11 +6,20 @@ $border: $blue3;
   background-color: $yellow;
   color: $white;
   padding: 20px 0 0 0;
+}
 
+.intro {
   p {
     font-size: 18px;
     font-weight: bold;
-    margin: 0 0 30px 0;
+    margin-top: 0;
+
+    a {
+      text-align: center;
+      color: $white;
+      text-decoration: underline;
+      display: block;
+    }
   }
 }
 
@@ -157,9 +166,12 @@ $border: $blue3;
 }
 
 @media (min-width: 769px) {
+  .intro {
+    padding: 20px 0;
+  }
+
   .hero {
     p {
-      padding: 20px 0;
       font-size: 24px;
     }
   }

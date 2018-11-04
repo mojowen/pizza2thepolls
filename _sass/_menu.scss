@@ -9,7 +9,15 @@
 
   h1 {
     margin: 0;
-    font-size: 48px;
+    font-size: 36px;
+
+    a {
+      color: $blue;
+    }
+
+    @media (min-width: 769px) {
+      font-size: 48px;
+    }
   }
 }
 
@@ -21,10 +29,6 @@
   font-weight: bold;
   z-index: 1000;
   text-align: center;
-
-  &[aria-hidden="true"] {
-    display: none;
-  }
 
   li {
     display: inline-block;
@@ -42,7 +46,7 @@
     border-radius: 10px;
 
     &:hover {
-      border-bottom: 2px solid $white;
+      background: #c10228;
     }
   }
 }
