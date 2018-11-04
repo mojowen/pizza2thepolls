@@ -7,6 +7,7 @@ deploy:
   acl: public_read
   region: us-west-2
   local_dir: _site
+  skip_cleanup: true
   on:
     repo: mojowen/pizza2thepolls
 
