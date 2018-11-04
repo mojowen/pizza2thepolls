@@ -21,6 +21,10 @@
       font-size: 48px;
     }
   }
+
+  img:last-of-type {
+    display: none;
+  }
 }
 
 .menu {
@@ -71,6 +75,10 @@
     h1 {
       margin-bottom: 20px;
     }
+
+    img:last-of-type {
+      display: inline;
+    }
   }
 
   .menu-toggle {
@@ -85,12 +93,7 @@
 
     li {
       display: inline-block;
-      // border-right: 1px solid $white;
       padding: 20px 30px;
-
-      &:first-of-type {
-        // border-left: 1px solid $white;
-      }
     }
   }
 }

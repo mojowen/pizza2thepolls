@@ -191,11 +191,15 @@ section {
   padding: 20px 0;
 }
 
-#donate-confirmation {
+.message {
   padding: 10px 20px;
   background: #3dc1c8;
   border-radius: 8px;
   box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.05);
+
+  &.is-error {
+    background: $red;
+  }
 }
 
 fieldset {
@@ -237,7 +241,6 @@ input[type="radio"] {
   display: inline-block;
   width: 60px;
   background: none;
-  color: #fff;
   border: none;
   border-radius: 0;
   border-bottom: 2px solid #fff;

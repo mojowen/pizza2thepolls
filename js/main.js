@@ -304,6 +304,9 @@ function handleSubmit() {
   if (!data.full_place || !data.social_link) {
     submit_message.textContent =
       "Hmmm you are missing some crucial details there";
+    submit_message.removeAttribute("hidden");
+    submit_message.classList.add("is-error");
+
     return false;
   }
   tinyPOST(
@@ -318,6 +321,8 @@ function handleSubmit() {
         }
       );
       submit_message.textContent = "Thanks! We will get right on that";
+      submit_message.removeAttribute("hidden");
+      submit_message.classList.remove("is-error");
     }
   );
 }

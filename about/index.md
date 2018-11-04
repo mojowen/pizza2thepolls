@@ -14,7 +14,7 @@ title: About
 
 Americans are hungry for democracy and are turning out in record numbers to vote. But that means long lines and sometimes empty stomachs, which might discourage these brave patriots from performing their civic duty.
 
-Fortunately Pizza to the Polls is here to deliver the one thing that pairs so perfectly with freedom: piping hot 'za. Send us reports of long lines and we'll send in the delicious reinforcements.
+Fortunately Pizza to the Polls is here to deliver the one thing that pairs so perfectly with freedom: piping hot 'za. We take reports of long lines from folks around the country and then find local pizza places to deliver the goods.
 
 ## How it got started
 
