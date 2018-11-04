@@ -1,2 +1,14 @@
-exclude: [README.md, .well_known, .well-known/apple-developer-merchantid-domain-association/, .well-known/apple-developer-merchantid-domain-association/index.html]
+exclude:
+  [
+    README.md,
+    .well_known,
+    .well-known/apple-developer-merchantid-domain-association/,
+    .well-known/apple-developer-merchantid-domain-association/index.html,
+  ]
 
+sass:
+  style: compressed
+  sass_dir: _sass
+
+gems:
+  - jekyll-babel

@@ -6,11 +6,17 @@ deploy:
   bucket: s3.polls.pizza
   acl: public_read
   region: us-west-2
+  local_dir: _site
   on:
     repo: mojowen/pizza2thepolls
 
 install:
+  - rvm install 2.5.0
+  - bundle install
   - npm install -g travis-ci-cloudfront-invalidation
+
+before_deploy:
+  - jekyll build
 
 after_deploy:
   - travis-ci-cloudfront-invalidation -a $AWS_ACCESS_KEY -s $AWS_SECRET_KEY -c $AWS_CLOUDFRONT_DIST_ID -i '/*' -b $TRAVIS_BRANCH -p $TRAVIS_PULL_REQUEST

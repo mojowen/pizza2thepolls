@@ -1,0 +1,54 @@
+<section id="report" class="report">
+    <div class="container">
+        <h2>Report a long line</h2>
+        <p>We need you to help us identify long polling lines full of hungry voters. Use this form to share a
+            link to any tweets or instagrams that include evidence of the long lines and let us know where the
+            polling place is.</p>
+        <p id="submit_message" class="message" hidden></p>
+        <form id="form">
+            <div class="form-item">
+                <label for="social-link">Link to a report on social media</label>
+                <input id="social-link" type="text" name="social_link">
+                <span class="help"><strong>Required:</strong> We'll make sure there's really a line.</span>
+            </div>
+            <div class="form-item">
+                <label for="address">Polling place address</label>
+                <input type="text" id="autocomplete" name="full_place" onFocus="geolocate()" />
+                <span class="help"><strong>Required:</strong> Search by the name of the place ("St. John's
+                    Library") or street address.</span>
+            </div>
+            <div id="address" class="form-item" hidden>
+                <table>
+                    <tr>
+                        <td class="label" name="name">Place</td>
+                        <td colspan="4"><input id="premise" disabled="true" /></td>
+                    </tr>
+                    <tr>
+                        <td class="label">Street address</td>
+                        <td class="slimField"><input name="street_number" class="field" id="street_number" disabled="true" /></td>
+                        <td class="wideField" colspan="2"><input class="field" name="route" id="route" disabled="true" /></td>
+                    </tr>
+                    <tr>
+                        <td class="label">City</td>
+                        <td class="wideField" colspan="3"><input name="locality" class="field" id="locality" disabled="true" /></td>
+                    </tr>
+                    <tr>
+                        <td class="label">State</td>
+                        <td class="slimField"><input name="state" class="field" id="administrative_area_level_1"
+                                disabled="true" /></td>
+                        <td class="label">Zip code</td>
+                        <td class="wideField"><input name="zip" class="field" id="postal_code" disabled="true" /></td>
+                        <input type="hidden" name="formatted_address" id="formatted_address">
+                    </tr>
+                </table>
+            </div>
+            <div class="form-item">
+                <label for="address">Your phone number or email address</label>
+                <input type="text" name="contact">
+                <br />
+                <span class="help">Optional: So we can follow up when the pizza is inbound</span>
+            </div>
+            <button class="submit" type="button" onClick="handleSubmit()">Submit report. Feed democracy</button>
+        </form>
+    </div>
+</section>

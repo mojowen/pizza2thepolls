@@ -1,34 +1,85 @@
-var totals_url = "https://spreadsheets.google.com/feeds/list/1mxmW0YljLEcNP1BUJoUlAEtzzE0FXwbaDBPN26dlloo/1/public/basic?alt=json";
-var adresses_url = "https://spreadsheets.google.com/feeds/list/1mxmW0YljLEcNP1BUJoUlAEtzzE0FXwbaDBPN26dlloo/2/public/basic?alt=json";
-var now = new Date;
-var addresses = [];
+---
+---
+var totals_url =
+  "https://spreadsheets.google.com/feeds/list/1mxmW0YljLEcNP1BUJoUlAEtzzE0FXwbaDBPN26dlloo/2/public/basic?alt=json";
+var upcoming_url =
+  "https://spreadsheets.google.com/feeds/list/1mxmW0YljLEcNP1BUJoUlAEtzzE0FXwbaDBPN26dlloo/3/public/basic?alt=json";
+var deliveries_url =
+  "https://spreadsheets.google.com/feeds/list/1mxmW0YljLEcNP1BUJoUlAEtzzE0FXwbaDBPN26dlloo/4/public/basic?alt=json";
+var now = new Date();
 var directPay;
+var upcoming = [];
 
-tinyGET(totals_url,function(data) {
-  var now = new Date()
-  var raised = '$' + data.feed.entry[0].content['$t'].split(': ')[1];
-  var pizzas = data.feed.entry[1].content['$t'].split(': ')[1];
-  var remaining = '$' + data.feed.entry[2].content['$t'].split(': ')[1];
-  document.getElementById('stat-raised').innerHTML = raised;
-  document.getElementById('stat-pizzas').innerHTML = pizzas;
-  document.getElementById('stat-remaining').innerHTML = remaining;
-  document.getElementById('stat-info').innerHTML = 'As of ' + now.toLocaleString();
+/****************************
+Locations
+****************************/
+const concatenateLocation = pieces => {
+  let location = `${pieces.address} ${pieces.city}, ${pieces.state} on ${
+    pieces.date
+  }, ${pieces.time}`;
+
+  if (pieces.pizza) {
+    return `<a href="${pieces.report} target="blank" title="View report">${
+      pieces.pizza
+    } pizzas to ${location}</a>`;
+  } else {
+    return `<a href="${
+      pieces.report
+    } target="blank" title="View report">${location}</a>`;
+  }
+};
+
+const parseLocations = (data, listID) => {
+  return data.feed.entry.reverse().map(entry => {
+    let pieces = { address: entry.title["$t"] };
+    entry.content["$t"].split(", ").map(piece => {
+      const key = piece.split(": ")[0];
+      const value = piece.split(": ")[1];
+      pieces[key] = value;
+    });
+    const location = concatenateLocation(pieces);
+    document.getElementById(listID).innerHTML += `<li>${location}</li>`;
+    return pieces;
+  });
+};
+
+tinyGET(totals_url, function(data) {
+  var now = new Date();
+  var pizzas = data.feed.entry[0].content["$t"].split(": ")[1];
+  var locations = data.feed.entry[1].content["$t"].split(": ")[1];
+  var states = data.feed.entry[2].content["$t"].split(": ")[1];
+  var raised = "$" + data.feed.entry[3].content["$t"].split(": ")[1];
+  var raisedAllTime = "$" + data.feed.entry[4].content["$t"].split(": ")[1];
+  var remaining = "$" + data.feed.entry[5].content["$t"].split(": ")[1];
+  document.getElementById("stat-pizzas").innerHTML = pizzas;
+  document.getElementById("stat-locations").innerHTML = locations;
+  document.getElementById("stat-states").innerHTML = states;
+  document.getElementById("stat-raised").innerHTML = raised;
+  document.getElementById("stat-raised-alltime").innerHTML = raisedAllTime;
+  document.getElementById("stat-remaining").innerHTML = remaining;
+  document.getElementById("stat-info").innerHTML =
+    "As of " + now.toLocaleString();
 });
 
-tinyGET(adresses_url, function(data) {
-  for (var i = 0; i < data.feed.entry.length; i++) {
-    var content = data.feed.entry[i].content["$t"],
-        address = {},
-        keys = content.match(/[a-z]*(?=:\s)/g).filter( function(el) { return el.length > 0 })
-        values = content.split(/\,\s[a-z]*\:\s/).filter( function(el) { return el.length > 0 })
-    for (var j = 0; j < keys.length; j++) {
-      var key = keys[j];
-      address[key] = values[j].replace(key+": ", "");
-    }
-    try { address.timestamp = new Date(address.timestamp) } catch(e) { }
-    addresses.push(address)
+tinyGET(upcoming_url, data => {
+  if (data.feed.entry) {
+    window.upcoming = parseLocations(data, "upcoming-list");
+    document.getElementById("upcoming-count").innerHTML =
+      data.feed.entry.length + 1;
+  } else {
+    document.getElementById("upcoming-list").innerHTML = "<li>None yet</li>";
   }
-})
+});
+
+tinyGET(deliveries_url, data => {
+  if (data.feed.entry) {
+    parseLocations(data, "deliveries-list");
+    document.getElementById("delivery-count").innerHTML =
+      data.feed.entry.length + 1;
+  } else {
+    document.getElementById("deliveries-list").innerHTML = "<li>None yet</li>";
+  }
+});
 
 var showConfirmation = function(amount) {
   var message = `Thanks for donating $${amount} to Pizza to the Polls. You'll receive a receipt in your email soon.`;
@@ -93,7 +144,9 @@ var enableDirectPay = function(amount, pizzas) {
       }
     });
     directPay.on("token", function(ev) {
-      tokenHandler(ev.token, function() { ev.complete('success'); });
+      tokenHandler(ev.token, function() {
+        ev.complete("success");
+      });
     });
   }
 };
@@ -125,7 +178,7 @@ var getAmount = function() {
 
 document.getElementById("donate-form").addEventListener("change", function(e) {
   var amount = getAmount(),
-    pizzas = Math.ceil(amount / 100 / 13.5);
+    pizzas = Math.ceil(amount / 100 / 20);
 
   if (amount) {
     document.getElementById("checkout").classList.remove("is-disabled");
@@ -137,7 +190,7 @@ document.getElementById("donate-form").addEventListener("change", function(e) {
 
 document.getElementById("checkout").addEventListener("click", function(e) {
   var amount = getAmount(),
-    pizzas = Math.ceil(amount / 100 / 13.5);
+    pizzas = Math.ceil(amount / 100 / 20);
 
   if (amount) {
     // Open Checkout with further options:
@@ -172,12 +225,12 @@ var componentForm = {
   administrative_area_level_1: "short_name",
   postal_code: "short_name",
   premise: "name",
-  formatted_address: "formatted_address",
+  formatted_address: "formatted_address"
 };
 
 function toggleAddressVisibility() {
   const address = document.getElementById("address");
-  if ( address.getAttribute("hidden") !== null) {
+  if (address.getAttribute("hidden") !== null) {
     address.removeAttribute("hidden");
   } else {
     address.setAttribute("hidden", "");
@@ -189,7 +242,7 @@ function initAutocomplete() {
   // location types.
   autocomplete = new google.maps.places.Autocomplete(
     document.getElementById("autocomplete"),
-    { types: ["establishment"], componentRestrictions: {'country': 'us'} },
+    { types: ["geocode"], componentRestrictions: { country: "us" } }
   );
 
   // When the user selects an address from the dropdown, populate the address
@@ -210,8 +263,8 @@ function fillInAddress() {
   // Get each component of the address from the place details
   // and fill the corresponding field on the form.
   for (var i = 0; i < place.address_components.length; i++) {
-      var addressType = place.address_components[i].types[0],
-          val = place.address_components[i][componentForm[addressType]];
+    var addressType = place.address_components[i].types[0],
+      val = place.address_components[i][componentForm[addressType]];
     if (componentForm[addressType]) {
       document.getElementById(addressType).value = val;
     }
@@ -244,7 +297,7 @@ function handleSubmit() {
   -
   */
   var data = {};
-  submit_message.textContent = '';
+  submit_message.textContent = "";
 
   Array.prototype.map.call(
     document.getElementById("form").querySelectorAll("input"),
@@ -252,20 +305,35 @@ function handleSubmit() {
       data[el.name] = el.value;
     }
   );
-  if( !data.full_place || !data.social_link ) {
-      submit_message.textContent = 'Hmmm you are missing some crucial details there'
-      return false;
+  if (!data.full_place || !data.social_link) {
+    submit_message.textContent =
+      "Hmmm you are missing some crucial details there";
+    submit_message.removeAttribute("hidden");
+    submit_message.classList.add("is-error");
+    document.location = '#submit_message';
+    return false;
+  }
+  if (  window.upcoming.find(el => { return el.address == data.formatted_address }) ) {
+    submit_message.textContent = "Thanks! We will get right on that";
+    submit_message.removeAttribute("hidden");
+    document.location = '#submit_message';
+    return false;
   }
   tinyPOST(
-    'https://hooks.zapier.com/hooks/catch/2966893/qk6is7/',
+    "https://hooks.zapier.com/hooks/catch/2966893/qk6is7/",
     data,
     function(resp) {
-      toggleAddressVisibility()
+      toggleAddressVisibility();
       Array.prototype.map.call(
         document.getElementById("form").querySelectorAll("input"),
-        function(el) { el.value = '';}
+        function(el) {
+          el.value = "";
+        }
       );
-      submit_message.textContent = 'Thanks! We will get right on that';
+      submit_message.textContent = "Thanks! We will get right on that";
+      submit_message.removeAttribute("hidden");
+      submit_message.classList.remove("is-error");
+      document.location = '#submit_message';
     }
-  )
+  );
 }

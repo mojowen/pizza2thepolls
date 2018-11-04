@@ -1,0 +1,53 @@
+<section id="donate" class="donate">
+    <div class="container">
+        <h2>Donate to the 🍕 fund</h2>
+        <p>Waiting in line sucks. Waiting in line with pizza sucks a little less.</p>
+                <img alt="Photo of pizzas at polling places" src="/images/pics/photo_5.jpg">
+
+        <p>Help ensure that America's voters who are stuck in line don't have to wait with an empty stomach by
+            chipping into the pizza fund today.</p>
+        <p>We'll use this money to order pizzas from local places and have them delivered wherever folks are stuck in line.</p>
+        <form id="donate-form">
+            <fieldset>
+                <legend>How many pizzas do you wanna fund?</legend>
+                <ul>
+                    <li>
+                        <input type="radio" value="20" id="radio-1" name="amount">
+                        <label class="radio" for="radio-1">1 pizza ($20) 🍕</label>
+                    </li>
+                    <li>
+                        <input type="radio" value="40" id="radio-2" name="amount">
+                        <label class="radio" for="radio-2">2 pizzas ($40) 🍕🍕</label>
+                    </li>
+                    <li>
+                        <input type="radio" value="60" id="radio-3" name="amount">
+                        <label class="radio" for="radio-3">3 pizzas ($60) 🍕🍕🍕</label>
+                    </li>
+                    <li>
+                        <input type="radio" value="100" id="radio-4" name="amount">
+                        <label class="radio" for="radio-4">5 pizzas ($100) 🍕🍕🍕🍕🍕</label>
+                    </li>
+                    <li>
+                        <input type="radio" value="200" id="radio-5" name="amount">
+                        <label class="radio" for="radio-5">10 pizzas ($200) 🍕🍕🍕🍕🍕🍕🍕🍕🍕🍕</label>
+                    </li>
+                </ul>
+            </fieldset>
+            <div class="radio">
+                <label for="custom-amount">Other:</label> $
+                <input type="text" name="amount" id="custom-amount">
+            </div>
+            <button class="submit is-disabled" id="checkout">Checkout</button>
+            <div id="payment-request-button"></div>
+        </form>
+        <div id="donate-confirmation" class="message" hidden>
+            <h3>Thanks for helping make the pizza magic happen!</h3>
+            <p id="donate-confirmation-message"></p>
+            <p>Why not spread the word?</p>
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I just donated to @pizzatothepolls! You can give today at"
+                data-url="https://polls.pizza" data-show-count="false">Tweet</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+        </div>
+    </div>
+</section>
