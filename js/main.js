@@ -242,7 +242,7 @@ function initAutocomplete() {
   // location types.
   autocomplete = new google.maps.places.Autocomplete(
     document.getElementById("autocomplete"),
-    { types: ["geocode"], componentRestrictions: { country: "us" } }
+    { types: ["geocode", "establishment"], componentRestrictions: { country: "us" } }
   );
 
   // When the user selects an address from the dropdown, populate the address
@@ -271,24 +271,6 @@ function fillInAddress() {
   }
   premise.value = place.name;
   formatted_address.value = place.formatted_address;
-}
-
-// Bias the autocomplete object to the user's geographical location,
-// as supplied by the browser's 'navigator.geolocation' object.
-function geolocate() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var geolocation = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
-      var circle = new google.maps.Circle({
-        center: geolocation,
-        radius: position.coords.accuracy
-      });
-      autocomplete.setBounds(circle.getBounds());
-    });
-  }
 }
 
 function handleSubmit() {
