@@ -25,7 +25,7 @@ const concatenateLocation = pieces => {
   } else {
     return `<a href="${
       pieces.report
-    } target="blank" title="View report">${location}</a>`;
+    }" target="blank" title="View report">${location}</a>`;
   }
 };
 
@@ -67,7 +67,7 @@ tinyGET(upcoming_url, data => {
     document.getElementById("upcoming-count").innerHTML =
       data.feed.entry.length + 1;
   } else {
-    document.getElementById("upcoming-list").innerHTML = "<li>None yet</li>";
+    document.getElementById("upcoming-list").innerHTML = "<li>None at the moment.</li>";
   }
 });
 
