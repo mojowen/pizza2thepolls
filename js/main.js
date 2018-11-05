@@ -19,7 +19,7 @@ const concatenateLocation = pieces => {
   }, ${pieces.time}`;
 
   if (pieces.pizza) {
-    return `<a href="${pieces.report} target="blank" title="View report">${
+    return `<a href="${pieces.report}" target="blank" title="View report">${
       pieces.pizza
     } pizzas to ${location}</a>`;
   } else {
