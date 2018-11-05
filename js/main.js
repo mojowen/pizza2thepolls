@@ -305,7 +305,7 @@ function handleSubmit() {
       data[el.name] = el.value;
     }
   );
-  if (!data.full_place || !data.social_link) {
+  if (!data.formatted_address || !data.social_link) {
     submit_message.textContent =
       "Hmmm you are missing some crucial details there";
     submit_message.removeAttribute("hidden");
