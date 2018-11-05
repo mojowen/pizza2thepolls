@@ -7,11 +7,11 @@
   background-size: 200px;
   top: 0;
   z-index: 1000;
-  padding: 20px 0;
+  padding: 20px 5px;
 
   h1 {
     margin: 0;
-    font-size: 36px;
+    font-size: 32px;
     vertical-align: middle;
 
     a {
@@ -44,13 +44,14 @@
     font-size: 18px;
     font-weight: bold;
     padding: 0 10px;
+    width: 49%;
   }
 
   a {
     text-decoration: none;
     background: $red;
     color: #fff;
-    padding: 10px 20px;
+    padding: 10px 15px;
     border-radius: 10px;
     display: block;
 
@@ -64,9 +65,15 @@
   .header {
     border-bottom: none;
     position: relative;
+    padding-left: 0;
+    padding-right: 0;
 
     img {
       width: 100px;
+    }
+
+    h1 {
+      font-size: 36px;
     }
   }
 
@@ -79,6 +86,7 @@
     li {
       display: inline-block;
       padding: 20px 30px 0 30px;
+      width: auto;
     }
 
     a {
