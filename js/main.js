@@ -319,9 +319,20 @@ function handleSubmit() {
       data[el.name] = el.value;
     }
   );
-  if (!data.formatted_address || !data.social_link) {
-    submit_message.textContent =
-      "Hmmm you are missing some crucial details there";
+  if ( !data.social_link ) {
+    submit_message.textContent = (
+      "Whoops! Can you add a link to a report of a long line - preferrably " +
+      "on twitter - so we can verify this is on the level?"
+    );
+    submit_message.removeAttribute("hidden");
+    submit_message.classList.add("is-error");
+    document.location = '#report';
+    return false;
+  }
+  if ( !data.formatted_address ) {
+    submit_message.textContent = (
+      "Whoops - can you refresh the page and type in an address? Thanks!"
+    );
     submit_message.removeAttribute("hidden");
     submit_message.classList.add("is-error");
     document.location = '#report';
