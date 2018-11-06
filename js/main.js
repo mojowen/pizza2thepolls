@@ -17,7 +17,7 @@ Locations
 const concatenateLocation = pieces => {
   let location = `${pieces.address} ${pieces.city}, ${pieces.state} on ${
     pieces.date
-  }, ${pieces.time}`;
+  }, ${pieces.time} PST`;
 
   if (pieces.pizza) {
     return `<a href="${pieces.report}" target="blank" title="View report">${
