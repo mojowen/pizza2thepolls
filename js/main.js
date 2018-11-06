@@ -252,7 +252,6 @@ function initAutocomplete() {
 }
 
 function matchPlace(loc, address) {
-  debugger
   return (
     address.includes(loc.address)
     &&
