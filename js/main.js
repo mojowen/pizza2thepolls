@@ -9,6 +9,7 @@ var deliveries_url =
 var now = new Date();
 var directPay;
 var upcoming = [];
+var delivered = [];
 
 /****************************
 Locations
@@ -73,7 +74,7 @@ tinyGET(upcoming_url, data => {
 
 tinyGET(deliveries_url, data => {
   if (data.feed.entry) {
-    parseLocations(data, "deliveries-list");
+    window.delivered = parseLocations(data, "deliveries-list");
     document.getElementById("delivery-count").innerHTML =
       data.feed.entry.length + 1;
   } else {
@@ -250,12 +251,48 @@ function initAutocomplete() {
   autocomplete.addListener("place_changed", fillInAddress);
 }
 
+function matchPlace(loc, address) {
+  debugger
+  return (
+    address.includes(loc.address)
+    &&
+    address.includes(loc.city)
+    &&
+    address.includes(loc.state)
+  )
+}
+
 function fillInAddress() {
   // Get the place details from the autocomplete object.
   var place = autocomplete.getPlace();
 
   for (var component in componentForm) {
     document.getElementById(component).value = "";
+  }
+  var found_upcoming = window.upcoming.find(loc => matchPlace(loc, place.formatted_address))
+  if ( found_upcoming ) {
+    submit_message.innerHTML = (
+      `Thanks! We are already working on that one - ` +
+      `following up on <a href="${found_upcoming.report}">this tip</a>`
+    );
+    submit_message.removeAttribute("hidden");
+    document.location = '#report';
+    return false;
+  }
+  var found_delivered = window.delivered.find(loc => matchPlace(loc, place.formatted_address))
+  if ( found_delivered ) {
+    var ordered_at = new Date(`${found_delivered.date}/18 ${found_delivered.time} GMT-0800`);
+    if( ordered_at > new Date(new Date() -  60 * 60 * 1000) ) {
+      submit_message.innerHTML = (
+        `Thanks! We just sent one that way - want to check back in a bit to see ` +
+        `if it's still an issue? We were going off of` +
+        `<a href="${found_delivered.report}">this tip</a>.`
+      );
+      submit_message.removeAttribute("hidden");
+      document.location = '#report';
+      return false;
+    }
+
   }
 
   toggleAddressVisibility();
@@ -274,10 +311,6 @@ function fillInAddress() {
 }
 
 function handleSubmit() {
-  /* TODO:
-  - Check for required values
-  -
-  */
   var data = {};
   submit_message.textContent = "";
 
@@ -292,13 +325,7 @@ function handleSubmit() {
       "Hmmm you are missing some crucial details there";
     submit_message.removeAttribute("hidden");
     submit_message.classList.add("is-error");
-    document.location = '#submit_message';
-    return false;
-  }
-  if (  window.upcoming.find(el => { return el.address == data.formatted_address }) ) {
-    submit_message.textContent = "Thanks! We will get right on that";
-    submit_message.removeAttribute("hidden");
-    document.location = '#submit_message';
+    document.location = '#report';
     return false;
   }
   tinyPOST(
@@ -315,7 +342,7 @@ function handleSubmit() {
       submit_message.textContent = "Thanks! We will get right on that";
       submit_message.removeAttribute("hidden");
       submit_message.classList.remove("is-error");
-      document.location = '#submit_message';
+      document.location = '#report';
     }
   );
 }
