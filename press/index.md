@@ -9,6 +9,8 @@ If you'd like to get in touch with us for a story send an email to [press@polls.
 
 [Learn more about our story](/about).
 
+[Some B-Roll of us ordering pizzas](/broll).
+
 ## 2018 Press
 
 - [NPR's Morning Edition](https://npr.org/2018/10/25/660436884/long-line-to-vote-a-pizza-delivery-service-will-send-a-pie-to-crowded-polling-pl)
