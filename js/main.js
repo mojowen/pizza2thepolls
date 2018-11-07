@@ -62,15 +62,15 @@ tinyGET(totals_url, function(data) {
     "As of " + now.toLocaleString();
 });
 
-tinyGET(upcoming_url, data => {
-  if (data.feed.entry) {
-    window.upcoming = parseLocations(data, "upcoming-list");
-    document.getElementById("upcoming-count").innerHTML =
-      data.feed.entry.length + 1;
-  } else {
-    document.getElementById("upcoming-list").innerHTML = "<li>None at the moment.</li>";
-  }
-});
+// tinyGET(upcoming_url, data => {
+//   if (data.feed.entry) {
+//     window.upcoming = parseLocations(data, "upcoming-list");
+//     document.getElementById("upcoming-count").innerHTML =
+//       data.feed.entry.length + 1;
+//   } else {
+//     document.getElementById("upcoming-list").innerHTML = "<li>None at the moment.</li>";
+//   }
+// });
 
 tinyGET(deliveries_url, data => {
   if (data.feed.entry) {
