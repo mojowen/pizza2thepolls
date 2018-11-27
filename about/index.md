@@ -54,7 +54,7 @@ We use <a href="http://slicelife.com/">Slice</a> to find pizza places close to t
 
 ### What if there are funds left over?
 
-Every dollar collected will go towards feeding hungry Americans. Any funds not spent will be saved for future hungry voters and/or marchers.
+Every dollar collected will go towards feeding hungry Americans or supporting efforts to help more people vote. Any funds not spent will be saved for future hungry voters and/or marchers.
 
 <hr>
 
