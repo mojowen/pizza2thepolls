@@ -60,7 +60,7 @@ Every dollar collected will go towards feeding hungry Americans or supporting ef
 
 ### Hey can you also send pizzas to...?
 
-[Maybe!](/sendpizzas)
+[Maybe!](/sendingpizzas)
 
 <hr>
 
