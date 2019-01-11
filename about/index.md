@@ -58,11 +58,9 @@ Every dollar collected will go towards feeding hungry Americans or supporting ef
 
 <hr>
 
-### Hey can you also send pizzas to...
+### Hey can you also send pizzas to...?
 
-We've sent pizzas to rallies, protests, strikes, teach-ins, and folks exercising their right to free assembly. We know being a citizen of a democracy is more than just voting every couple of years and we're happy to help out with our leftover pizza funds.
-
-If you're interested in receiving pizza or know someone who we could help please get in touch. However we're not going to send pizza  without touching base with the organizers first to make sure they're expecting food and that we're being helpful. If you've got something in mind please make sure you've got buy-in from folks on the ground and have their contact info so we can connect.
+[Maybe!](/sendpizzas)
 
 <hr>
 
