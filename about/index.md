@@ -26,6 +26,10 @@ What started out small - in a few polling places in Ohio, Florida, and Illinois 
 
 By the time the dust had settled and the ballots were cast, we had raised $43,307 from 1,728 donors, and over 25,000 slices of pizza were consumed.
 
+## 2018
+
+Two years later we were back at it again - nearly quintupled our efforts by sending 10,820 pizzas to 611 polling places across 41 states and raising $426,622 from 10,885 donors roughly the same number of volunteers.
+
 ## FAQ
 
 ### Is this a charity?
