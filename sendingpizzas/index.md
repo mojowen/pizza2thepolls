@@ -13,7 +13,7 @@ We evaluate every request on a case-by-case basis using the following criteria:
  
  2. __Are you the organizer of the event or can you connect us with them?__ We don't want to disrupt someones hard work by sending a bunch of unexpected pizzas.
   
- 3. __Are folks coming together to have their voice heard?__ We tend to support folks engaged in civic expression (like a rally or protest), or standing up for their rights (like a strike), or doing something civicly minded (like registering voters or helping count ballots).
+ 3. __Are folks coming together to have their voice heard?__ We tend to support folks engaged in civic expression (like a rally or protest), or standing up for their rights (like a strike), or doing something civically minded (like registering voters or helping count ballots).
  
     We're less inclined to send pizzas to folks at work (like reporters staking out a courthouse). But if you've answered questions __#1__ and __#2__ it doesn't hurt to ask.
 
