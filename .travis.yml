@@ -12,8 +12,7 @@ deploy:
     repo: mojowen/pizza2thepolls
 
 install:
-  - rvm install 2.5.0
-  - gem install bundler
+  - rvm install 2.5.7
   - bundle install
   - npm install -g travis-ci-cloudfront-invalidation
 
