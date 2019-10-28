@@ -13,6 +13,7 @@ deploy:
 
 install:
   - rvm install 2.5.0
+  - gem install bundler
   - bundle install
   - npm install -g travis-ci-cloudfront-invalidation
 
