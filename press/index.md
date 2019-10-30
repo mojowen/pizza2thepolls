@@ -17,6 +17,11 @@ If you'd like to get in touch with us for a story send an email to [press@polls.
 - [Food & Wine](https://www.foodandwine.com/news/pizza-delivery-polling-places-long-lines)
 - [The Takeout](https://thetakeout.com/pizza-delivery-polls-voting-long-lines-group-1830071157)
 - [ABC15](https://www.abc15.com/news/national/pizza-to-the-polls-delivers-pizza-to-hungry-voters?fbclid=IwAR3lGkR-GHqOY0UopEStfXkd_7AxQYitbnahAa8VGYlIVog8dkZEWMf8KRg)
+- [Newsweek](https://www.newsweek.com/pizza-polls-delivers-thousands-pizzas-waiting-voters-1203911)
+- [Buzzfeed](https://www.buzzfeed.com/aliciabarron/stuck-in-a-long-line-waiting-to-vote-pizza-to-the-polls?bftw&utm_term=4ldqpfp#4ldqpfp)
+- [Good Morning America](https://abcnews.go.com/GMA/News/video/people-helping-polls-58993925)
+
+And more!
 
 ## 2016 Press
 
