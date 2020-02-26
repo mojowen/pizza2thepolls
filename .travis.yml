@@ -3,7 +3,7 @@ deploy:
   access_key_id: AKIAUVMKVGAFR3BX6S5R
   secret_access_key:
     secure: OW2YQ2uTSV/UE3kMakmc8KAGdO3AjePH7nFrJwF2HtNOlWnOf8gbZHt0lSQnKsUU7lqKqdPGZH8uaAb3v4Tt3kme4iq0aVMmOm1po/1Q5ylIgmiRDIfa7MwQ88AEVcqYznsEfoUKLOgaxg3BZQNKhLOqaMTD+zL+wQBofAThJWpRFM+yGyPTN8yECqhJCwE9dm8p5NOHE+DtdGWL4CqBK9xqmfejTjF6h2kYWMeUpEO/dqHvzeN9KQHZWEPAGdlBl+OMiMJsxq6UX54vQGeK4om1oGhiPmajOdj1iB3uBCaayFVB87cQf/8LGtFwz15CIZKI/DkpjmWmkMYAIhMg1bgFcDhL5x1N5Ta79BAehc70GO0jFwR1WbmSkwUG/uAcqP0ATGHruagTwjQw8tDMeAQPmSyotfgnhgvmT6GFRDMHgGMTdfIVKZXwdJfvNZ+BTnyKlZBpOtTpp+paN7kL3+2hrU/bokeEfgKq7GlG1XcsLvWumdeHekmnXo+fiGgrxh3mwkh753Ji442Kzl+FcHBZ+p702kDan2AbvfjpSOWRu82PVCe+BhxECGKISYnMonxjL7/mmA4M8++gk5wkEHBvqae3vN8CnM5wWGeSsOLrGkH+2T+tCUB8Gxw1I4iEDHbYkRCt+0NUUf6d0S32hqWaYTHJiot9bTZZj+51TDc=
-  bucket: new.polls.pizza
+  bucket: polls.pizza
   acl: public_read
   region: us-west-2
   local_dir: _site
