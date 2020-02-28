@@ -31,6 +31,8 @@ const concatenateLocation = pieces => {
 };
 
 const parseLocations = (data, listID) => {
+  const elem = document.getElementById(listID);
+  elem.innerHTML = ""
   return data.feed.entry.reverse().map(entry => {
     let pieces = { address: entry.title["$t"] };
     entry.content["$t"].split(", ").map(piece => {
@@ -39,48 +41,53 @@ const parseLocations = (data, listID) => {
       pieces[key] = value;
     });
     const location = concatenateLocation(pieces);
-    document.getElementById(listID).innerHTML += `<li>${location}</li>`;
+    elem.innerHTML += `<li>${location}</li>`;
     return pieces;
   });
 };
 
-tinyGET(totals_url, function(data) {
-  var now = new Date();
-  var pizzas = data.feed.entry[0].content["$t"].split(": ")[1];
-  var locations = data.feed.entry[1].content["$t"].split(": ")[1];
-  var states = data.feed.entry[2].content["$t"].split(": ")[1];
-  var raised = "$" + data.feed.entry[3].content["$t"].split(": ")[1];
-  var raisedAllTime = "$" + data.feed.entry[4].content["$t"].split(": ")[1];
-  var remaining = "$" + data.feed.entry[5].content["$t"].split(": ")[1];
-  document.getElementById("stat-pizzas").innerHTML = pizzas;
-  document.getElementById("stat-locations").innerHTML = locations;
-  document.getElementById("stat-states").innerHTML = states;
-  document.getElementById("stat-raised").innerHTML = raised;
-  document.getElementById("stat-raised-alltime").innerHTML = raisedAllTime;
-  document.getElementById("stat-remaining").innerHTML = remaining;
-  document.getElementById("stat-info").innerHTML =
-    "As of " + now.toLocaleString();
-});
+function refreshTotals() {
+  tinyGET(totals_url, function(data) {
+    var now = new Date();
+    var pizzas = data.feed.entry[0].content["$t"].split(": ")[1];
+    var locations = data.feed.entry[1].content["$t"].split(": ")[1];
+    var states = data.feed.entry[2].content["$t"].split(": ")[1];
+    var raised = "$" + data.feed.entry[3].content["$t"].split(": ")[1];
+    var raisedAllTime = "$" + data.feed.entry[4].content["$t"].split(": ")[1];
+    var remaining = "$" + data.feed.entry[5].content["$t"].split(": ")[1];
+    document.getElementById("stat-pizzas").innerHTML = pizzas;
+    document.getElementById("stat-locations").innerHTML = locations;
+    document.getElementById("stat-states").innerHTML = states;
+    document.getElementById("stat-raised").innerHTML = raised;
+    document.getElementById("stat-raised-alltime").innerHTML = raisedAllTime;
+    document.getElementById("stat-remaining").innerHTML = remaining;
+    document.getElementById("stat-info").innerHTML =
+      "As of " + now.toLocaleString();
+  });
 
-tinyGET(upcoming_url, data => {
-  if (data.feed.entry) {
-    window.upcoming = parseLocations(data, "upcoming-list");
-    document.getElementById("upcoming-count").innerHTML =
-      data.feed.entry.length + 1;
-  } else {
-    document.getElementById("upcoming-list").innerHTML = "<li>None at the moment.</li>";
-  }
-});
+  tinyGET(upcoming_url, data => {
+    if (data.feed.entry) {
+      window.upcoming = parseLocations(data, "upcoming-list");
+      document.getElementById("upcoming-count").innerHTML =
+        data.feed.entry.length + 1;
+    } else {
+      document.getElementById("upcoming-list").innerHTML = "<li>None at the moment.</li>";
+    }
+  });
 
-tinyGET(deliveries_url, data => {
-  if (data.feed.entry) {
-    window.delivered = parseLocations(data, "deliveries-list");
-    document.getElementById("delivery-count").innerHTML =
-      data.feed.entry.length + 1;
-  } else {
-    document.getElementById("deliveries-list").innerHTML = "<li>None yet</li>";
-  }
-});
+  tinyGET(deliveries_url, data => {
+    if (data.feed.entry) {
+      window.delivered = parseLocations(data, "deliveries-list");
+      document.getElementById("delivery-count").innerHTML =
+        data.feed.entry.length + 1;
+    } else {
+      document.getElementById("deliveries-list").innerHTML = "<li>None yet</li>";
+    }
+  });
+}
+
+refreshTotals()
+setInterval(refreshTotals, 1000 * 60 * 2)
 
 var showConfirmation = function(amount) {
   var message = `Thanks for donating $${amount} to Pizza to the Polls. You'll receive a receipt in your email soon.`;
