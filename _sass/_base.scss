@@ -6,7 +6,6 @@ $gray2: #c6c7c4;
 $white: #fff;
 $offwhite: #e8eddf;
 $blue2: #29335c;
-$blue3: #29335c;
 
 * {
   box-sizing: border-box;
@@ -152,7 +151,7 @@ section {
 }
 
 .report {
-  background-color: $blue3;
+  background-color: $blue2;
   background-image: url("/images/bg2.png");
   background-attachment: fixed;
   background-size: 400px;
@@ -303,7 +302,7 @@ input[type="radio"]:focus + label {
 }
 
 footer {
-  background: $blue3;
+  background: $blue2;
   color: #fff;
   padding: 40px 0;
   text-align: center;

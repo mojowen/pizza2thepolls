@@ -34,7 +34,11 @@ Two years later we were back at it again - nearly quintupled our efforts by send
 
 ### Is this a charity?
 
-No, so contributions are not tax-deductible. (But we are an official 501(c)(4) nonprofit, if you're a tax code nerd like that).
+No, so contributions are not tax-deductible and we are an official 501(c)(4) nonprofit.
+
+**However** we have worked with attorneys to validate that our programs [📬 Democracy Delivered](/democracy-delivered), [⚡️ Power the Polls](/power-the-polls), and pizza delivery are all 501(c)(3) compliant.
+
+So if you are a charity, foundation, corporation or nonprofit that's restricted to working only with 501(c)(3)s and want to work with us - we'd love to hear from you!
 
 <hr>
 
