@@ -7,7 +7,7 @@ title: Power the Polls
 
 Most poll workers are over the age of 60 – the most vulnerable to the coronavirus. This year, it will be especially vital to help local election administrators recruit young, healthy citizens to work the election and ensure all eligible voters have the option to vote in person if necessary.
 
-![](/images/pollworkers.png)
+<img style="margin-top: 72px" src="/images/pollworkers.png">
 
 
 ## What We're Doing to Help

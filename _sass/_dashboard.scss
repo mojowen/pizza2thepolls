@@ -32,7 +32,8 @@ $border: $blue2;
     a {
       font-size: 1.85rem;
       display: block;
-      margin: 60px 10%;
+      margin: 60px auto;
+      max-width: 72%;
       text-decoration: none;
       p {
         font-weight: normal;
@@ -43,7 +44,6 @@ $border: $blue2;
         background-color: $white;
         padding: 14px 30px;
         border-radius: 4px;
-        display: inline-block;
       }
       p, &, &:visited, &:active {
         color: $blue;
