@@ -62,5 +62,5 @@ $5,000 - $7,500 per month, dependent on experience.
 
 Please email your resume, cover letter, and three references to [jobs@polls.pizza](mailto:jobs@polls.pizza) to be considered. Applications received **prior to September 8th** will be prioritized.
 
-Pizza to the Polls is committed to running an inclusive and equitable organization, and we encourage people of all backgrounds to apply. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, disability status, protected veteran status, or any other characteristic protected by law.
+Pizza to the Polls is committed to running an inclusive and equitable organization, and we encourage people of all backgrounds to apply. All qualified applicants will receive consideration without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, disability status, protected veteran status, or any other characteristic protected by law.
  
