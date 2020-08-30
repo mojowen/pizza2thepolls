@@ -35,7 +35,7 @@ Pizza to the Polls is looking to bring on a contractor to remotely manage our di
 
 ### Qualifications
 
-This is an mid-level position for someone with some experience with social media management. There is no prior political experience needed for this position. The ideal candidate will have:
+This is a mid-level position for someone with some experience with social media management. There is no prior political experience needed for this position. The ideal candidate will have:
 
 - Strong interpersonal skills and desire to communicate proactively regarding projects;
 - Excellent organizational, time management, and problem-solving skills;

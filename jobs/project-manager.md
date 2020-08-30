@@ -40,7 +40,7 @@ Pizza to the Polls is looking to bring on a contractor to remotely manage our fo
 
 ### Qualifications
 
-This is an mid-to-senior level position for someone with experience in hands-on project management. Prior political experience is not required, but a passion and enthusiasm for democracy is. The ideal candidate will have:
+This is a mid-to-senior level position for someone with experience in hands-on project management. Prior political experience is not required, but a passion and enthusiasm for democracy is. The ideal candidate will have:
 
 - Strong interpersonal skills and desire to communicate proactively regarding projects;
 - Excellent organizational and time management skills;
