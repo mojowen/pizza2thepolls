@@ -5,7 +5,7 @@ title: Project Manager
 
 ## **About Us**
 
-Americans are hungry for democracy and are turning out in record numbers to vote. But that means long lines and sometimes empty stomachs, which might discourage these brave patriots from performing their civic duty. Fortunately, Pizza to the Polls is here to deliver on the one thing that pairs so perfectly with freedom: piping hot ‘za. We take reports of long lines from folks around the country and then find local pizza places to deliver the goods. We have a team of over 20 volunteers who coordinate the delivery of pizzas to polling places all over the nation. This year, we are expanding our pizza delivery efforts, and introducing a new food truck program. But our mission is the same: fortify hungry voters in line and put followers and friends to work finding other voters in need.
+Americans are hungry for democracy and are turning out in record numbers to vote. But that means long lines and sometimes empty stomachs.. Fortunately, Pizza to the Polls is here to deliver on the one thing that pairs so perfectly with freedom: piping hot ‘za. We take reports of long lines from folks around the country and then find local pizza places to deliver the goods. We have a team of over 20 volunteers who coordinate the delivery of pizzas to polling places all over the nation. This year, we are expanding our pizza delivery efforts, and introducing a new food truck program. But our mission is the same: fortify hungry people at crowded polling places and put followers and friends to work finding other voters in need.
 
 ## **Position Overview**
 

@@ -5,7 +5,7 @@ title: Project Manager
 
 ## About Us
 
-Americans are hungry for democracy and are turning out in record numbers to vote. But that means long lines and sometimes empty stomachs, which might discourage these brave patriots from performing their civic duty. Fortunately, Pizza to the Polls is here to deliver on the one thing that pairs so perfectly with freedom: piping hot ‘za. We take reports of long lines from folks around the country and then find local pizza places to deliver the goods. We have a team of over 20 volunteers who coordinate the delivery of pizzas to polling places all over the nation. This year, we are expanding our pizza delivery efforts and introducing a new food truck program. But our mission is the same: fortify hungry voters in line and put followers and friends to work finding other voters in need.
+Americans are hungry for democracy and are turning out in record numbers to vote. But that means long lines and sometimes empty stomachs.. Fortunately, Pizza to the Polls is here to deliver on the one thing that pairs so perfectly with freedom: piping hot ‘za. We take reports of long lines from folks around the country and then find local pizza places to deliver the goods. We have a team of over 20 volunteers who coordinate the delivery of pizzas to polling places all over the nation. This year, we are expanding our pizza delivery efforts, and introducing a new food truck program. But our mission is the same: fortify hungry people at crowded polling places and put followers and friends to work finding other voters in need.
 
 ## Position Overview
 
@@ -63,4 +63,3 @@ $5,000 - $7,500 per month, dependent on experience.
 Please email your resume, cover letter, and three references to [jobs@polls.pizza](mailto:jobs@polls.pizza) to be considered. Applications received **prior to September 8th** will be prioritized.
 
 Pizza to the Polls is committed to running an inclusive and equitable organization, and we encourage people of all backgrounds to apply. All qualified applicants will receive consideration without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, disability status, protected veteran status, or any other characteristic protected by law.
- 
