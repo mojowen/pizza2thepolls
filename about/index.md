@@ -20,7 +20,7 @@ Fortunately Pizza to the Polls is here to deliver the one thing that pairs so pe
 
 The weekend before election day, news spread of long lines across the country at early voting locations. Thus, Pizza to the Polls was born. In a few short hours, we came up with a name, a Twitter handle, a website, and a plan: Give pizza to the people. And give people watching at home a way to help.
 
-We took in reports of long lines and sent our lucky pizza delivery recruits out on their mission to save democracy. The feedback was immediate and immense: it fortified hungry voters in line, cheered up beleaguered poll workers, and put followers and friends to work finding other voters in need so we could send in more ‘za.
+We took in reports of long lines and sent our lucky pizza delivery recruits out on their mission to save democracy. The feedback was immediate and immense: it fortified hungry voters in line, cheered up beleaguered poll workers, and put followers and friends to work finding others in need so we could send in more ‘za.
 
 What started out small - in a few polling places in Ohio, Florida, and Illinois - quickly ballooned into a nationwide effort. By the morning of Election Day we had raised $10,000 and were confronted with the seemingly impossible task of spending it all before the polls closed. As the day progressed we were bringing in donations faster than we could place orders - so we recruited and trained a team of over twenty volunteers from across the US, England, and Australia to order and coordinate the delivery of 2,368 pizzas to 128 polling places across 24 states.
 
