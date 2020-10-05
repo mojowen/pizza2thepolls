@@ -16,13 +16,12 @@
     <style sty-id="sc-stencil-route">
       stencil-route.inactive{display:none}
     </style>
-    <style sty-id="sc-page-home">
-      .hero{background-image:url("/images/bg.png");background-size:400px;background-color:#f3a712;background-attachment:fixed;color:#fff;padding:20px 0 0 0}.intro p{font-size:18px;margin-top:0;display:block;margin:0 auto 30px;font-weight:bold;text-align:center}.dashboard.launching .stats{background-color:#29335c}.dashboard.launching h2,.dashboard.launching p{color:#fff}.dashboard.launching p{font-size:1.33rem}.dashboard.launching h2{border-bottom-color:#fff}.dashboard.launching .programs a{font-size:1.85rem;display:block;margin:60px auto;max-width:72%;text-decoration:none}.dashboard.launching .programs a p{font-weight:normal;line-height:1.25rem}.dashboard.launching .programs a span{font-weight:bold}.dashboard.launching .programs a div{background-color:#fff;padding:14px 30px;border-radius:4px}.dashboard.launching .programs a p,.dashboard.launching .programs a,.dashboard.launching .programs a:visited,.dashboard.launching .programs a:active{color:#00c1cc}.dashboard.launching .programs a:hover p,.dashboard.launching .programs a:hover{color:#fff}.dashboard.launching .programs a:hover div{background-color:#00c1cc}.dashboard.launching .programs a:hover span{text-decoration:underline}.dashboard.launching .programs a p{font-size:1.2rem}.dashboard-bg{background-color:#29335c;background-image:url("/images/bg2.png");background-attachment:fixed;background-size:400px;width:100%;height:53%;position:absolute;bottom:0;z-index:0}.dashboard{color:#29335c;text-align:center;position:relative;padding:0 0 20px 0}.dashboard h2{position:relative;display:block;padding:0 0 20px 0;margin:0;z-index:101;border-bottom:4px solid #29335c;font-size:32px}.stats{padding:40px;background:#fff;color:#29335c;position:relative;z-index:100;border-radius:10px;-webkit-box-shadow:0 10px 40px 0 rgba(41, 51, 92, 0.3);box-shadow:0 10px 40px 0 rgba(41, 51, 92, 0.3);text-align:center}.stats h2{font-size:24px}@media screen and (min-width: 600px){.stats h2{font-size:32px}}.stats .button{width:100%;max-width:400px}.stats__row{padding-bottom:10px;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}.stats__row:first-of-type{padding:20px 0;border-bottom:4px solid #29335c;margin-bottom:40px}.stat__info{display:block;text-align:center;font-size:0.8em}.stat{text-align:center;padding:10px;width:50%}.stat:last-of-type{border-bottom:none}.stat__number{font-size:24px;font-family:"Fredoka One", cursive}@media screen and (min-width: 600px){.stat__number{font-size:32px}}.stat__label{display:block}.stat__link{display:block;text-align:center;margin-top:20px}@media (min-width: 600px){.stats__row{display:-ms-flexbox;display:flex}.stat{display:table-cell;width:24.5%;text-align:center;padding:20px;border-bottom:none;margin-right:2px}.stat:last-of-type{border-right:none}.stat__info{text-align:right}}@media (min-width: 769px){.intro{padding:20px 0}.hero p{font-size:24px;max-width:80%}}.home-secondary{background:#29335c;background-image:url("/images/bg2.png");background-attachment:fixed;background-size:400px;text-align:center}.home-secondary p{color:#fff;font-size:24px;max-width:600px;margin:0 auto 20px}.home-secondary .button{width:100%;max-width:400px}.cards{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;-ms-flex-direction:column;flex-direction:column;padding:40px 0}.card{background:#fff;padding:20px;border-radius:10px;text-align:left;margin-bottom:20px}.card p{font-size:16px;color:#29335c}.card img{border-radius:10px;margin-bottom:20px}.card a{color:#00c1cc;font-weight:bold;display:inline-block;text-align:center;width:100%;font-size:18px}.card h3{border-bottom:3px solid #f3a712;padding-bottom:10px;margin:0 0 20px 0;text-align:center;color:#29335c}@media (min-width: 600px){.cards{-ms-flex-wrap:nowrap;flex-wrap:nowrap;-ms-flex-direction:row;flex-direction:row}.card{width:calc(50% - 20px);margin-bottom:0}}
+    <style sty-id="sc-page-trucks">
+      :host{display:block}
     </style>
     <link href="/build/p-29947e80.js" rel="modulepreload">
     <link href="/build/p-c65040e9.js" rel="modulepreload">
     <link href="/build/p-ea787fa0.js" rel="modulepreload">
-    <link href="/build/p-3c0900f8.js" rel="modulepreload">
     <script data-resources-url="/build/" data-stencil data-stencil-namespace="app" src="/build/p-29947e80.js" type="module"></script>
     <script data-stencil nomodule src="/build/app.js"></script>
     <style data-m>
@@ -55,7 +54,7 @@
     <meta content="Pizza to the Polls 🍕🇺🇸" property="og:title">
     <meta content="Pizza to the Polls is making democracy delicious by delivering free food for all to polling places with long lines. Send us reports of long lines and we'll send in the delicious reinforcements." property="og:description">
     <meta content="https://polls.pizza/social.png" property="og:image">
-    <link href="https://polls.pizza/" rel="canonical">
+    <link href="https://polls.pizza/trucks" rel="canonical">
   </head>
   <body>
     <app-root class="hydrated" s-id="1">
@@ -110,7 +109,7 @@
           <!--r.6-->
           <!--o.1.15-->
           <!--s.6.0.0.0.-->
-          <stencil-route-switch c-id="1.15.2.0" class="hydrated" group="9291-9975-1900-3730" s-id="7">
+          <stencil-route-switch c-id="1.15.2.0" class="hydrated" group="9992-7139-5664-4939" s-id="7">
             <!--r.7-->
             <!--o.1.16-->
             <!--o.1.17-->
@@ -123,144 +122,150 @@
             <!--o.1.24-->
             <!--o.1.25-->
             <!--s.7.0.0.0.-->
-            <stencil-route c-id="1.16.3.0" class="hydrated" group="9291-9975-1900-3730" s-id="8">
+            <stencil-route c-id="1.16.3.0" class="hydrated" s-id="8">
               <!--r.8-->
-              <page-home c-id="8.0.0.0" class="hydrated" s-id="9">
-                <!--r.9-->
-                <div c-id="9.0.0.0">
-                  <section c-id="9.1.1.0" class="hero">
-                    <div c-id="9.2.2.0" class="intro">
-                      <div c-id="9.3.3.0" class="container">
-                        <p c-id="9.4.4.0">
-                          <!--t.9.5.5.0-->
-                          Pizza to the Polls is making democracy delicious by delivering free food for all to polling places with long lines.
-                        </p>
-                        <p c-id="9.6.4.1">
-                          <!--t.9.7.5.0-->
-                          Send us reports of long lines and we'll send in the delicious reinforcements.
-                        </p>
-                      </div>
-                    </div>
-                    <div c-id="9.8.2.1" class="dashboard">
-                      <div c-id="9.9.3.0" class="container">
-                        <div c-id="9.10.4.0" class="stats">
-                          <h2 c-id="9.11.5.0" class="display">
-                            <!--t.9.12.6.0-->
-                            2020 Election Totals
-                          </h2>
-                          <div c-id="9.13.5.1" class="stats__row">
-                            <div c-id="9.14.6.0" class="stat">
-                              <span c-id="9.15.7.0" class="stat__number">
-                                <!--t.9.16.8.0-->
-                                2,118
-                              </span>
-                              <span c-id="9.17.7.1" class="stat__label">
-                                <!--t.9.18.8.0-->
-                                Pizzas sent
-                              </span>
-                            </div>
-                            <div c-id="9.19.6.1" class="stat">
-                              <span c-id="9.20.7.0" class="stat__number">
-                                <!--t.9.21.8.0-->
-                                182
-                              </span>
-                              <span c-id="9.22.7.1" class="stat__label">
-                                <!--t.9.23.8.0-->
-                                Polling places
-                              </span>
-                            </div>
-                            <div c-id="9.24.6.2" class="stat">
-                              <span c-id="9.25.7.0" class="stat__number">
-                                <!--t.9.26.8.0-->
-                                19
-                              </span>
-                              <span c-id="9.27.7.1" class="stat__label">
-                                <!--t.9.28.8.0-->
-                                States
-                              </span>
-                            </div>
-                            <div c-id="9.29.6.3" class="stat">
-                              <span c-id="9.30.7.0" class="stat__number">
-                                <!--t.9.31.8.0-->
-                                $74,972
-                              </span>
-                              <span c-id="9.32.7.1" class="stat__label">
-                                <!--t.9.33.8.0-->
-                                Raised in 2020
-                              </span>
-                            </div>
-                          </div>
-                          <a c-id="9.34.5.2" class="button primary" href="/report">
-                            <!--t.9.35.6.0-->
-                            Report a line
-                          </a>
-                          <a c-id="9.36.5.3" class="stat__link" href="/activity">
-                            <!--t.9.37.6.0-->
-                            View recent deliveries
-                          </a>
-                        </div>
-                      </div>
-                      <div c-id="9.38.3.1" class="dashboard-bg"></div>
-                    </div>
-                  </section>
-                  <section c-id="9.39.1.1" class="home-secondary">
-                    <div c-id="9.40.2.0" class="container">
-                      <p c-id="9.41.3.0">
-                        <!--t.9.42.4.0-->
-                        Pizza to the Polls is a nonpartisan, nonprofit initiative founded in 2016 with a simple mission: deliver food to crowded polling locations.
-                      </p>
-                      <a c-id="9.43.3.1" class="button secondary" href="/donate">
-                        <!--t.9.44.4.0-->
-                        Donate
-                      </a>
-                      <div c-id="9.45.3.2" class="cards">
-                        <div c-id="9.46.4.0" class="card">
-                          <h3 c-id="9.47.5.0">
-                            <!--t.9.48.6.0-->
-                            Food trucks
-                          </h3>
-                          <img alt="Food truck" c-id="9.49.5.1" src="/images/truck.jpg">
-                          <p c-id="9.50.5.2">
-                            <!--t.9.51.6.0-->
-                            For the 2020 election season, we’re launching a food truck program in 25 cities around the country for early voting and election day.
-                          </p>
-                          <a c-id="9.52.5.3" href="/trucks">
-                            <!--t.9.53.6.0-->
-                            Learn more
-                          </a>
-                        </div>
-                        <div c-id="9.54.4.1" class="card">
-                          <h3 c-id="9.55.5.0">
-                            <!--t.9.56.6.0-->
-                            On-demand
-                          </h3>
-                          <img alt="Pizza at a polling location" c-id="9.57.5.1" src="/images/pics/photo_5.jpg">
-                          <p c-id="9.58.5.2">
-                            <!--t.9.59.6.0-->
-                            Our signature program is back and we need you to help by reporting crowded polling places and then sticking around to make sure food gets delivered safely.
-                          </p>
-                          <a c-id="9.60.5.3" href="/on-demand">
-                            <!--t.9.61.6.0-->
-                            Learn more
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </section>
-                </div>
-              </page-home>
             </stencil-route>
-            <stencil-route c-id="1.17.3.1" class="hydrated" s-id="10">
+            <stencil-route c-id="1.17.3.1" class="hydrated" s-id="9">
+              <!--r.9-->
+            </stencil-route>
+            <stencil-route c-id="1.18.3.2" class="hydrated" s-id="10">
               <!--r.10-->
             </stencil-route>
-            <stencil-route c-id="1.18.3.2" class="hydrated" s-id="11">
+            <stencil-route c-id="1.19.3.3" class="hydrated" s-id="11">
               <!--r.11-->
             </stencil-route>
-            <stencil-route c-id="1.19.3.3" class="hydrated" s-id="12">
+            <stencil-route c-id="1.20.3.4" class="hydrated" group="9992-7139-5664-4939" s-id="12">
               <!--r.12-->
-            </stencil-route>
-            <stencil-route c-id="1.20.3.4" class="hydrated" s-id="13">
-              <!--r.13-->
+              <page-trucks c-id="12.0.0.0" class="hydrated" s-id="13">
+                <!--r.13-->
+                <section c-id="13.0.0.0" class="page" id="trucks">
+                  <div c-id="13.1.1.0" class="container">
+                    <h1 c-id="13.2.2.0">
+                      <!--t.13.3.3.0-->
+                      Food Trucks
+                    </h1>
+                    <img alt="Food truck" c-id="13.4.2.1" class="photo" src="/images/truck.jpg">
+                    <p c-id="13.5.2.2">
+                      <!--t.13.6.3.0-->
+                      For the 2020 election season, Pizza to the Polls is launching a food truck program in partnership with Uber Eats and restaurant partners like Milk Bar, Shake Shack, and more. We’ll be sending out food trucks in 25 cities, delivering treats to polling locations with long lines throughout early voting and Election Day.
+                    </p>
+                    <p c-id="13.7.2.3">
+                      <!--t.13.8.3.0-->
+                      Since the COVID-19 pandemic began in March, we’ve seen in-person voting locations struggle. Poll worker shortages are reducing the number of polling places — and social distancing measures are limiting the number of people who can vote at one time. As a result, lines are getting longer. By launching food trucks in cities with a history of long lines, we plan to safely provide free, individually wrapped snacks and beverages to everyone.
+                    </p>
+                    <p c-id="13.9.2.4">
+                      <!--t.13.10.3.0-->
+                      Our food trucks will be staffed with trained professionals who will be wearing masks and gloves and will be equipped with hand sanitizer, soap, disinfectant, and additional cleaning supplies.
+                    </p>
+                    <h2 c-id="13.11.2.5">
+                      <!--t.13.12.3.0-->
+                      Locations and schedule
+                    </h2>
+                    <ul c-id="13.13.2.6">
+                      <li c-id="13.14.3.0">
+                        <!--t.13.15.4.0-->
+                        Phoenix, AZ (Oct. 29, Oc. 30, Nov. 3)
+                      </li>
+                      <li c-id="13.16.3.1">
+                        <!--t.13.17.4.0-->
+                        Los Angeles, CA (Nov. 3)
+                      </li>
+                      <li c-id="13.18.3.2">
+                        <!--t.13.19.4.0-->
+                        Washington, DC (Oct. 30 - Nov. 3)
+                      </li>
+                      <li c-id="13.20.3.3">
+                        <!--t.13.21.4.0-->
+                        Miami, FL (Oct. 29 - Nov. 1, Nov. 3)
+                      </li>
+                      <li c-id="13.22.3.4">
+                        <!--t.13.23.4.0-->
+                        Tampa, FL (Oct. 29 - Nov. 1, Nov. 3)
+                      </li>
+                      <li c-id="13.24.3.5">
+                        <!--t.13.25.4.0-->
+                        Orlando, FL (Oct. 29 - Nov. 1, Nov. 3)
+                      </li>
+                      <li c-id="13.26.3.6">
+                        <!--t.13.27.4.0-->
+                        Gainesville, FL (Oct. 29 - Nov. 1, Nov. 3)
+                      </li>
+                      <li c-id="13.28.3.7">
+                        <!--t.13.29.4.0-->
+                        Atlanta, GA (Oct. 29, Oc. 30, Nov. 3)
+                      </li>
+                      <li c-id="13.30.3.8">
+                        <!--t.13.31.4.0-->
+                        Louisville, KY (Nov. 3)
+                      </li>
+                      <li c-id="13.32.3.9">
+                        <!--t.13.33.4.0-->
+                        Detroit, MI (Oct. 29 - Nov. 3)
+                      </li>
+                      <li c-id="13.34.3.10">
+                        <!--t.13.35.4.0-->
+                        Ann Arbor, MI (Oct. 29 - Nov. 3)
+                      </li>
+                      <li c-id="13.36.3.11">
+                        <!--t.13.37.4.0-->
+                        Minneapolis, MN (Oct. 29 - Nov. 3)
+                      </li>
+                      <li c-id="13.38.3.12">
+                        <!--t.13.39.4.0-->
+                        Charlotte, NC (Oct. 29 - Oct. 31, Nov. 3)
+                      </li>
+                      <li c-id="13.40.3.13">
+                        <!--t.13.41.4.0-->
+                        Raleigh, NC (Oct. 29 - Oct. 31, Nov. 3)
+                      </li>
+                      <li c-id="13.42.3.14">
+                        <!--t.13.43.4.0-->
+                        Greensboro, NC (Oct. 29 - Oct. 31, Nov. 3)
+                      </li>
+                      <li c-id="13.44.3.15">
+                        <!--t.13.45.4.0-->
+                        Las Vegas, NV (Nov. 3)
+                      </li>
+                      <li c-id="13.46.3.16">
+                        <!--t.13.47.4.0-->
+                        Reno, NV (Nov. 3)
+                      </li>
+                      <li c-id="13.48.3.17">
+                        <!--t.13.49.4.0-->
+                        New York, NY (Oct. 29 - Nov. 1, Nov. 3)
+                      </li>
+                      <li c-id="13.50.3.18">
+                        <!--t.13.51.4.0-->
+                        Philadelphia, PA (Oct. 29 - Nov. 3)
+                      </li>
+                      <li c-id="13.52.3.19">
+                        <!--t.13.53.4.0-->
+                        Pittsburgh, PA (Oct. 29 - Nov. 3)
+                      </li>
+                      <li c-id="13.54.3.20">
+                        <!--t.13.55.4.0-->
+                        Charleston, SC (Nov. 3)
+                      </li>
+                      <li c-id="13.56.3.21">
+                        <!--t.13.57.4.0-->
+                        Nashville, TN (Oct. 29, Nov. 3)
+                      </li>
+                      <li c-id="13.58.3.22">
+                        <!--t.13.59.4.0-->
+                        Houston, TX (Nov. 3)
+                      </li>
+                      <li c-id="13.60.3.23">
+                        <!--t.13.61.4.0-->
+                        Austin, TX (Oct. 29, Oct. 30, Nov. 3)
+                      </li>
+                      <li c-id="13.62.3.24">
+                        <!--t.13.63.4.0-->
+                        Milwaukee, WI (Oct. 29 - Nov. 1, Nov. 3)
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+              </page-trucks>
             </stencil-route>
             <stencil-route c-id="1.21.3.5" class="hydrated" s-id="14">
               <!--r.14-->
@@ -344,7 +349,7 @@
                 <stencil-route-link c-id="1.53.5.0" class="hydrated" s-id="22">
                   <!--r.22-->
                   <!--o.1.54-->
-                  <a c-id="22.0.0.0" href="/trucks">
+                  <a c-id="22.0.0.0" class="link-active" href="/trucks">
                     <!--s.22.1.1.0.-->
                     <!--t.1.54.6.0-->
                     Food trucks

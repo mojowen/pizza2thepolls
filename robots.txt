@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://polls.pizza/sitemap.xml

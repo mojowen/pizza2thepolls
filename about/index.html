@@ -1,51 +1,392 @@
----
-layout: base
----
-
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About this project</h2>
-            <h3>Where we've sent pizzas:</h3>
-            <ul>
-                <li>Miami, FL</li>
-                <li>Tamarac, FL</li>
-                <li>Chicago, IL</li>
-                <li>Evanston, IL</li>
-                <li>Cincinnati, OH</li>
-                <li>And counting...</li>
+<!doctype html>
+<html class="hydrated" dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      Pizza to the Polls
+    </title>
+    <meta content="Pizza to the Polls is making democracy delicious by delivering free food for all to polling places with long lines. Send us reports of long lines and we'll send in the delicious reinforcements." name="Description">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" name="viewport">
+    <meta content="#16161d" name="theme-color">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="IE=Edge" http-equiv="x-ua-compatible">
+    <style sty-id="sc-app-root">
+      .header{color:#fff;border-top:10px solid #db2b39;position:-webkit-sticky;position:sticky;width:100%;background-color:#fff;background-size:200px;top:0;z-index:1000;padding:20px 5px;text-align:center}.header img{width:300px;vertical-align:middle}.menu{list-style-type:none;margin:0;padding:10px 0 10px 0;width:100%;font-weight:bold;z-index:1000;text-align:center}.menu li{display:inline-block;font-size:18px;font-weight:bold;padding:0 10px;margin:0 10px;position:relative;color:#29335c}.menu li:after{content:"|";position:absolute;top:0;right:-15px}.menu li:last-child:after{content:""}.menu a,.menu stencil-route-link{text-decoration:none;color:#db2b39;display:block;-webkit-transition:color 0.1s ease-in-out;transition:color 0.1s ease-in-out}.menu a:hover,.menu a:focus,.menu stencil-route-link:hover,.menu stencil-route-link:focus{color:#00c1cc}.menu a:active,.menu .link-active{color:#00c1cc}@media (min-width: 600px){.header{border-bottom:none;position:relative;padding-left:0;padding-right:0}.header img{width:400px}.menu{position:relative;top:0;text-align:center;padding:20px 0 0 0}.menu li{display:inline-block;width:auto;font-size:24px}}*{-webkit-box-sizing:border-box;box-sizing:border-box}body{font-family:"Work Sans", sans-serif}a{color:#00c1cc;text-decoration:none;-webkit-transition:color 0.1s ease-in-out;transition:color 0.1s ease-in-out}a:hover{color:#009199}h1{text-align:center;color:#3dc1c8}h1,h2{font-weight:800}form{border-radius:4px;padding:0}p,li{line-height:1.5}img{max-width:100%}.display{font-family:"Fredoka One";font-weight:normal}.clearfix:after{content:"";display:table;clear:both}[hidden]{display:none}.bg{position:absolute;top:0;bottom:0;left:0;right:0;background:url("/images/bg.png");background-size:400px;z-index:1}.form-item{padding:20px 0;border-top:none}.form-item table{width:100%}label{display:block;margin-bottom:10px;font-weight:bold;font-size:1.2em}legend{font-weight:bold;font-size:1.2em}input,textarea{font-family:"Open Sans", sans-serif;width:100%;margin-bottom:0.5em;border-radius:4px;padding:10px;border:1px solid #ccc;overflow:hidden}input[type=submit],.submit{-webkit-transition:background-color 0.1s ease-in;transition:background-color 0.1s ease-in;display:block;background:#3dc1c8;border:none;color:#fff;cursor:pointer;width:100%;font-weight:bold;margin-bottom:0;padding:20px;border-radius:0 0 4px 4px}input[type=submit]:hover,.submit:hover{background:#35a8ae}.help{font-size:0.8em;font-style:italic;display:block}section{padding:20px 0}.container{max-width:800px;padding:0 20px;margin:0 auto}.is-disabled{opacity:0;cursor:default}.page{background-color:#eef0f2;color:#29335c;padding-bottom:40px}.page .photo{border-radius:10px}.page h1{text-align:left;font-size:2em;color:#29335c}.page p+h2{margin-top:2em}.page h3{margin-bottom:0}.page h3+p{margin-top:0}.page p+h3{margin-top:1.5em}.page img{max-width:100%}.page a{color:#db2b39}.page a:hover,.page a:active,.page a:focus{color:#b41f2b}.photo-grid{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between}.photo-grid img{width:24%;height:auto;border-radius:10px}footer{background:#29335c;border-top:5px solid #db2b39;color:#fff;padding:40px 0}footer a{color:#fff}footer input[type=email]{width:calc(100% - 140px);float:left;border:2px solid #fff;border-radius:4px 0 0 4px}footer input[type=submit]{float:left;width:140px;border:2px solid #fff;border-radius:0 4px 4px 0;padding:10px}.footer-nav{padding:20px 0 40px 0;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;border-top:3px solid #fff}.footer-nav ul{list-style-type:none;padding:0 40px 0 0;-ms-flex-positive:1;flex-grow:1}.footer-nav ul li{font-size:18px}.footer-nav ul li a{text-decoration:none}.footer-nav ul li a.link-active{color:#00c1cc}.footer-nav .social{padding:0;text-align:center}.footer-nav .social li{display:inline-block;margin:0 10px}@media (min-width: 600px){.footer-nav{-ms-flex-direction:row;flex-direction:row}.footer-nav .social{text-align:right}}@media (min-width: 769px){h1{font-size:3em}h1 .emoji,h1 .emoji:first-of-type{display:inline}p,li{font-size:18px}}#payment-request-button{margin-top:18px}.button{padding:15px 20px;border-radius:5px;font-weight:bold;text-decoration:none;display:inline-block;-webkit-transition:background-color 0.1s ease-in-out;transition:background-color 0.1s ease-in-out}.button.primary{background:#00c1cc;color:#fff}.button.primary:hover,.button.primary:active,.button.primary:focus{background-color:#009199}.button.secondary{background:#db2b39;color:#fff}.button.secondary:hover,.button.secondary:active,.button.secondary:focus{background-color:#b41f2b}
+    </style>
+    <style sty-id="sc-stencil-route">
+      stencil-route.inactive{display:none}
+    </style>
+    <link href="/build/p-29947e80.js" rel="modulepreload">
+    <link href="/build/p-c65040e9.js" rel="modulepreload">
+    <link href="/build/p-ea787fa0.js" rel="modulepreload">
+    <script data-resources-url="/build/" data-stencil data-stencil-namespace="app" src="/build/p-29947e80.js" type="module"></script>
+    <script data-stencil nomodule src="/build/app.js"></script>
+    <style data-m>
+      @import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap"); html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:0.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{-webkit-box-sizing:content-box;box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace, monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace, monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-0.25em}sup{top:-0.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,html [type="button"],[type="reset"],[type="submit"]{-webkit-appearance:button}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type="button"]:-moz-focusring,[type="reset"]:-moz-focusring,[type="submit"]:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:0.35em 0.625em 0.75em}legend{-webkit-box-sizing:border-box;box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type="checkbox"],[type="radio"]{-webkit-box-sizing:border-box;box-sizing:border-box;padding:0}[type="number"]::-webkit-inner-spin-button,[type="number"]::-webkit-outer-spin-button{height:auto}[type="search"]{-webkit-appearance:textfield;outline-offset:-2px}[type="search"]::-webkit-search-cancel-button,[type="search"]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}
+    </style>
+    <link href="/images/favicons/apple-icon-57x57.png" rel="apple-touch-icon" sizes="57x57">
+    <link href="/images/favicons/apple-icon-60x60.png" rel="apple-touch-icon" sizes="60x60">
+    <link href="/images/favicons/apple-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+    <link href="/images/favicons/apple-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+    <link href="/images/favicons/apple-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+    <link href="/images/favicons/apple-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+    <link href="/images/favicons/apple-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
+    <link href="/images/favicons/apple-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+    <link href="/images/favicons/apple-icon-180x180.png" rel="apple-touch-icon" sizes="180x180">
+    <link href="/images/favicons/android-icon-192x192.png" rel="icon" sizes="192x192" type="image/png">
+    <link href="/images/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+    <link href="/images/favicons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png">
+    <link href="/images/favicons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+    <meta content="#ffffff" name="msapplication-TileColor">
+    <meta content="/images/favicons/ms-icon-144x144.png" name="msapplication-TileImage">
+    <meta content="#ffffff" name="theme-color">
+    <meta content="summary_large_image" name="twitter:card">
+    <meta content="@pizzatothepolls" name="twitter:site">
+    <meta content="@pizzatothepolls" name="twitter:creator">
+    <meta content="Pizza to the Polls 🍕🇺🇸" name="twitter:title">
+    <meta content="Pizza to the Polls is making democracy delicious by delivering free food for all to polling places with long lines. Send us reports of long lines and we'll send in the delicious reinforcements." name="twitter:description">
+    <meta content="https://polls.pizza/images/social.png" name="twitter:image">
+    <meta content="https://polls.pizza" property="og:url">
+    <meta content="website" property="og:type">
+    <meta content="Pizza to the Polls 🍕🇺🇸" property="og:title">
+    <meta content="Pizza to the Polls is making democracy delicious by delivering free food for all to polling places with long lines. Send us reports of long lines and we'll send in the delicious reinforcements." property="og:description">
+    <meta content="https://polls.pizza/social.png" property="og:image">
+    <link href="https://polls.pizza/about" rel="canonical">
+  </head>
+  <body>
+    <app-root class="hydrated" s-id="1">
+      <!--r.1-->
+      <header c-id="1.0.0.0" class="header">
+        <stencil-route-link c-id="1.1.1.0" class="hydrated" s-id="2">
+          <!--r.2-->
+          <!--o.1.2-->
+          <a c-id="2.0.0.0" class="link-active" href="/">
+            <!--s.2.1.1.0.-->
+            <img alt="Pizza to the Polls" c-id="1.2.2.0" src="/images/lockup.png">
+          </a>
+        </stencil-route-link>
+        <ul c-id="1.3.1.1" class="menu" id="menu">
+          <li c-id="1.4.2.0">
+            <stencil-route-link c-id="1.5.3.0" class="hydrated" s-id="3">
+              <!--r.3-->
+              <!--o.1.6-->
+              <a c-id="3.0.0.0" href="/report">
+                <!--s.3.1.1.0.-->
+                <!--t.1.6.4.0-->
+                Report
+              </a>
+            </stencil-route-link>
+          </li>
+          <li c-id="1.7.2.1">
+            <stencil-route-link c-id="1.8.3.0" class="hydrated" s-id="4">
+              <!--r.4-->
+              <!--o.1.9-->
+              <a c-id="4.0.0.0" href="/donate">
+                <!--s.4.1.1.0.-->
+                <!--t.1.9.4.0-->
+                Donate
+              </a>
+            </stencil-route-link>
+          </li>
+          <li c-id="1.10.2.2">
+            <stencil-route-link c-id="1.11.3.0" class="hydrated" s-id="5">
+              <!--r.5-->
+              <!--o.1.12-->
+              <a c-id="5.0.0.0" class="link-active" href="/about">
+                <!--s.5.1.1.0.-->
+                <!--t.1.12.4.0-->
+                About
+              </a>
+            </stencil-route-link>
+          </li>
+        </ul>
+      </header>
+      <main c-id="1.13.0.1">
+        <stencil-router c-id="1.14.1.0" class="hydrated" s-id="6">
+          <!--r.6-->
+          <!--o.1.15-->
+          <!--s.6.0.0.0.-->
+          <stencil-route-switch c-id="1.15.2.0" class="hydrated" group="2853-2051-6643-8350" s-id="7">
+            <!--r.7-->
+            <!--o.1.16-->
+            <!--o.1.17-->
+            <!--o.1.18-->
+            <!--o.1.19-->
+            <!--o.1.20-->
+            <!--o.1.21-->
+            <!--o.1.22-->
+            <!--o.1.23-->
+            <!--o.1.24-->
+            <!--o.1.25-->
+            <!--s.7.0.0.0.-->
+            <stencil-route c-id="1.16.3.0" class="hydrated" s-id="8">
+              <!--r.8-->
+            </stencil-route>
+            <stencil-route c-id="1.17.3.1" class="hydrated" s-id="9">
+              <!--r.9-->
+            </stencil-route>
+            <stencil-route c-id="1.18.3.2" class="hydrated" s-id="10">
+              <!--r.10-->
+            </stencil-route>
+            <stencil-route c-id="1.19.3.3" class="hydrated" group="2853-2051-6643-8350" s-id="11">
+              <!--r.11-->
+              <page-about c-id="11.0.0.0" class="hydrated" s-id="12">
+                <!--r.12-->
+                <section c-id="12.0.0.0" class="about page" id="about">
+                  <div c-id="12.1.1.0" class="container">
+                    <h1 c-id="12.2.2.0">
+                      <!--t.12.3.3.0-->
+                      About
+                    </h1>
+                    <div c-id="12.4.2.1" class="photo-grid">
+                      <img alt="Photo of pizzas at polling places" c-id="12.5.3.0" src="/images/pics/photo_1.jpg">
+                      <img alt="Photo of pizzas at polling places" c-id="12.6.3.1" src="/images/pics/photo_2.jpg">
+                      <img alt="Photo of pizzas at polling places" c-id="12.7.3.2" src="/images/pics/photo_3.jpg">
+                      <img alt="Photo of pizzas at polling places" c-id="12.8.3.3" src="/images/pics/photo_4.jpg">
+                    </div>
+                    <p c-id="12.9.2.2">
+                      <!--t.12.10.3.0-->
+                      Americans are hungry for democracy and are turning out in record numbers to vote. But that means long lines and sometimes empty stomachs.
+                    </p>
+                    <p c-id="12.11.2.3">
+                      <!--t.12.12.3.0-->
+                      Fortunately, Pizza to the Polls is here to deliver the one thing that pairs perfectly with freedom: piping hot ’za. We take reports of long lines from folks around the country and then find local pizza places to deliver the goods.
+                    </p>
+                    <h2 c-id="12.13.2.4">
+                      <!--t.12.14.3.0-->
+                      How it got started
+                    </h2>
+                    <p c-id="12.15.2.5">
+                      <!--t.12.16.3.0-->
+                      The weekend before the 2016 election, long lines were reported at early voting locations across the country. In response, Pizza to the Polls was born. In a few short hours, the co-founders came up with a name, a Twitter handle, a website, and a plan: Give pizza to the people. And give people watching at home a way to help.
+                    </p>
+                    <p c-id="12.17.2.6">
+                      <!--t.12.18.3.0-->
+                      We collected reports of long lines and sent in delivery pizzas to feed the crowds. The feedback was immediate and immense: it fortified hungry voters in line, cheered up beleaguered poll workers, and gave people a way to help out their communities.
+                    </p>
+                    <p c-id="12.19.2.7">
+                      <!--t.12.20.3.0-->
+                      By the morning of Election Day, we had raised $10,000 and were confronted with the seemingly impossible task of spending it all before the polls closed. We recruited and trained a team of over twenty volunteers to order and coordinate the delivery of 2,368 pizzas to 128 polling places across 24 states.
+                    </p>
+                    <p c-id="12.21.2.8">
+                      <!--t.12.22.3.0-->
+                      By the time the dust had settled and the ballots were cast, we had raised $43,307 from 1,728 donors, and over 25,000 slices of pizza were consumed!
+                    </p>
+                    <h2 c-id="12.23.2.9">
+                      <!--t.12.24.3.0-->
+                      2018
+                    </h2>
+                    <p c-id="12.25.2.10">
+                      <!--t.12.26.3.0-->
+                      Two years later Pizza to the Polls was back and bigger than before. With the momentum we gained after the 2016 election, we were able to send 10,820 pizzas to 611 polling places across 41 states and to raise $426,622 from 10,885 donors.
+                    </p>
+                    <h2 c-id="12.27.2.11">
+                      <!--t.12.28.3.0-->
+                      FAQ
+                    </h2>
+                    <h3 c-id="12.29.2.12">
+                      <!--t.12.30.3.0-->
+                      Is this a charity?
+                    </h3>
+                    <p c-id="12.31.2.13">
+                      <!--t.12.32.3.0-->
+                      We are incorporated as a 501(c)(4) nonprofit social welfare organization. Contributions or gifts to Pizza to the Polls are not tax deductible. Our activities are 501(c)(3) compliant.
+                    </p>
+                    <p c-id="12.33.2.14">
+                      <!--t.12.34.3.0-->
+                      If you’d like to learn more about how you can contribute or work with us,
+                      <a c-id="12.35.3.1" href="/partners">
+                        <!--t.12.36.4.0-->
+                        learn more here
+                      </a>
+                      <!--t.12.37.3.2-->
+                      .
+                    </p>
+                    <h3 c-id="12.38.2.15">
+                      <!--t.12.39.3.0-->
+                      Who do you give snacks to?
+                    </h3>
+                    <p c-id="12.40.2.16">
+                      <!--t.12.41.3.0-->
+                      We send food trucks with snacks and deliver pizza to polling places with long lines. The food is free for anyone there — people in line, their kids, poll volunteers and staff, and anyone else hungry for a slice.
+                    </p>
+                    <h3 c-id="12.42.2.17">
+                      <!--t.12.43.3.0-->
+                      Is this partisan?
+                    </h3>
+                    <p c-id="12.44.2.18">
+                      <!--t.12.45.3.0-->
+                      No. Ain’t nothing partisan about trying to make voting less of a drag.
+                    </p>
+                    <h3 c-id="12.46.2.19">
+                      <!--t.12.47.3.0-->
+                      Where do you get your pizzas?
+                    </h3>
+                    <p c-id="12.48.2.20">
+                      <!--t.12.49.3.0-->
+                      We often use Slice to find a pizza place close to each polling location. We love to support local businesses in each city! We’ll also order from larger chains.
+                    </p>
+                    <h3 c-id="12.50.2.21">
+                      <!--t.12.51.3.0-->
+                      I have more questions?
+                    </h3>
+                    <p c-id="12.52.2.22">
+                      <!--t.12.53.3.0-->
+                      That’s more of a statement - but why don’t you send them to us at
+                      <a c-id="12.54.3.1" href="mailto:morequestions@polls.pizza">
+                        <!--t.12.55.4.0-->
+                        morequestions@polls.pizza
+                      </a>
+                      <!--t.12.56.3.2-->
+                      .
+                    </p>
+                  </div>
+                </section>
+              </page-about>
+            </stencil-route>
+            <stencil-route c-id="1.20.3.4" class="hydrated" s-id="13">
+              <!--r.13-->
+            </stencil-route>
+            <stencil-route c-id="1.21.3.5" class="hydrated" s-id="14">
+              <!--r.14-->
+            </stencil-route>
+            <stencil-route c-id="1.22.3.6" class="hydrated" s-id="15">
+              <!--r.15-->
+            </stencil-route>
+            <stencil-route c-id="1.23.3.7" class="hydrated" s-id="16">
+              <!--r.16-->
+            </stencil-route>
+            <stencil-route c-id="1.24.3.8" class="hydrated" s-id="17">
+              <!--r.17-->
+            </stencil-route>
+            <stencil-route c-id="1.25.3.9" class="hydrated" s-id="18">
+              <!--r.18-->
+            </stencil-route>
+          </stencil-route-switch>
+        </stencil-router>
+      </main>
+      <footer c-id="1.26.0.2">
+        <div c-id="1.27.1.0" class="container">
+          <div c-id="1.28.2.0" class="clearfix" id="mc_embed_signup" style="clear: left; width: 100%; max-width: 500px; margin: 0 auto 40px auto;">
+            <form action="https://pizza.us14.list-manage.com/subscribe/post?u=ff4b828d01c30e7ef1de2e24b&amp;id=a2d940b77b" c-id="1.29.3.0" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate target="_blank">
+              <div c-id="1.30.4.0" id="mc_embed_signup_scroll">
+                <label c-id="1.31.5.0" htmlfor="mce-EMAIL">
+                  <!--t.1.32.6.0-->
+                  Sign up for updates
+                </label>
+                <input c-id="1.33.5.1" class="email" id="mce-EMAIL" name="EMAIL" placeholder="email address" required type="email" value="">
+                <input c-id="1.34.5.2" class="button" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Subscribe">
+                <div aria-hidden="true" c-id="1.35.5.3" style="position: absolute; left: -5000px;">
+                  <input c-id="1.36.6.0" name="b_ff4b828d01c30e7ef1de2e24b_a2d940b77b" readonly tabindex="-1" type="text" value="">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div c-id="1.37.2.1" class="footer-nav">
+            <ul c-id="1.38.3.0">
+              <li c-id="1.39.4.0">
+                <stencil-route-link c-id="1.40.5.0" class="hydrated" s-id="19">
+                  <!--r.19-->
+                  <!--o.1.41-->
+                  <a c-id="19.0.0.0" class="link-active" href="/about">
+                    <!--s.19.1.1.0.-->
+                    <!--t.1.41.6.0-->
+                    About
+                  </a>
+                </stencil-route-link>
+              </li>
+              <li c-id="1.42.4.1">
+                <stencil-route-link c-id="1.43.5.0" class="hydrated" s-id="20">
+                  <!--r.20-->
+                  <!--o.1.44-->
+                  <a c-id="20.0.0.0" href="/partners">
+                    <!--s.20.1.1.0.-->
+                    <!--t.1.44.6.0-->
+                    Partners
+                  </a>
+                </stencil-route-link>
+              </li>
+              <li c-id="1.45.4.2">
+                <stencil-route-link c-id="1.46.5.0" class="hydrated" s-id="21">
+                  <!--r.21-->
+                  <!--o.1.47-->
+                  <a c-id="21.0.0.0" href="/press">
+                    <!--s.21.1.1.0.-->
+                    <!--t.1.47.6.0-->
+                    Press
+                  </a>
+                </stencil-route-link>
+              </li>
+              <li c-id="1.48.4.3">
+                <a c-id="1.49.5.0" href="mailto:morequestions@polls.pizza">
+                  <!--t.1.50.6.0-->
+                  Contact us
+                </a>
+              </li>
             </ul>
-            <p>Check out our <a href="https://twitter.com/PizzaToThePolls">Twitter</a> feed below for the latest updates.</p>
-            <hr>
-            <h3>Is this a charity?</h3>
-            <p>No, so contributions are not tax-deductible. (But we are an official 501(c)(4) nonprofit, if you're a tax
-                code nerd like that).</p>
-            <hr>
-            <h3>Who do you give pizzas to?</h3>
-            <p>We send pizzas anywhere there's a line and ask our delivery people to give them to anyone there: people in
-                line, their kids, poll volunteers and staff, and anyone else hungry for a slice.</p>
-            <hr>
-            <h3>So is this partisan?</h3>
-            <p>No. Ain't nothing partisan about trying to make voting less of a drag.</p>
-            <hr>
-            <h3>Where do you get your pizza from?</h3>
-            <p>We use <a href="http://slicelife.com/">SliceLife</a> to find pizza places close to the lines since they let
-                us tip and don't require someone to sign on delivery. We like to go with the local spots as much as
-                possible.</p>
-            <hr>
-            <h3>What if there are funds left over?</h3>
-            <p>Every dollar collected will go towards feeding hungry Americans. Any funds not spent will be saved for
-                future hungry voters and/or marchers.</p>
-            <hr>
-            <h3>I have more questions?</h3>
-            <p>That's more of a statement - but why don't you send them to us at <a href="mailto:morequestions@polls.pizza">morequestions@polls.pizza</a></p>
-            <hr>
+            <ul c-id="1.51.3.1">
+              <li c-id="1.52.4.0">
+                <stencil-route-link c-id="1.53.5.0" class="hydrated" s-id="22">
+                  <!--r.22-->
+                  <!--o.1.54-->
+                  <a c-id="22.0.0.0" href="/trucks">
+                    <!--s.22.1.1.0.-->
+                    <!--t.1.54.6.0-->
+                    Food trucks
+                  </a>
+                </stencil-route-link>
+              </li>
+              <li c-id="1.55.4.1">
+                <stencil-route-link c-id="1.56.5.0" class="hydrated" s-id="23">
+                  <!--r.23-->
+                  <!--o.1.57-->
+                  <a c-id="23.0.0.0" href="/on-demand">
+                    <!--s.23.1.1.0.-->
+                    <!--t.1.57.6.0-->
+                    On-demand delivery
+                  </a>
+                </stencil-route-link>
+              </li>
+              <li c-id="1.58.4.2">
+                <stencil-route-link c-id="1.59.5.0" class="hydrated" s-id="24">
+                  <!--r.24-->
+                  <!--o.1.60-->
+                  <a c-id="24.0.0.0" href="/covid">
+                    <!--s.24.1.1.0.-->
+                    <!--t.1.60.6.0-->
+                    COVID safety
+                  </a>
+                </stencil-route-link>
+              </li>
+            </ul>
+            <ul c-id="1.61.3.2" class="social">
+              <li c-id="1.62.4.0">
+                <a c-id="1.63.5.0" class="twitter" href="https://twitter.com/pizzatothepolls" target="blank">
+                  <img alt="Twitter" c-id="1.64.6.0" src="/images/twitter.svg">
+                </a>
+              </li>
+              <li c-id="1.65.4.1">
+                <a c-id="1.66.5.0" class="facebook" href="https://facebook.com/pizzatothepolls" target="blank">
+                  <img alt="Facebook" c-id="1.67.6.0" src="/images/facebook.svg">
+                </a>
+              </li>
+              <li c-id="1.68.4.2">
+                <a c-id="1.69.5.0" class="instagram" href="https://www.instagram.com/pizzatothepolls/" target="blank">
+                  <img alt="Instagram" c-id="1.70.6.0" src="/images/instagram.svg">
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-    </section>
-    <section class="about">
-        <div class="container">
-            <h2>Do You Tweet?</h2>
-            <a class="twitter-timeline" href="https://twitter.com/PizzaToThePolls" data-tweet-limit="8">Yes!</a>
-            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-            <hr>
-        </div>
-    </section>
+      </footer>
+    </app-root>
+    <script data-m>
+      (function(e,t,a,n,c,o,s){e["GoogleAnalyticsObject"]=c;e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},e[c].l=1*new Date;o=t.createElement(a),s=t.getElementsByTagName(a)[0];o.async=1;o.src=n;s.parentNode.insertBefore(o,s)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create","UA-86946159-1","auto");ga("send","pageview");
+    </script>
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="/js/tinyxhr.js"></script>
+    <script src="/js/main.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBb_IhCGGA3lt72lYpPy5rhQycPBKFDssw&amp;libraries=places&amp;callback=initAutocomplete&amp;sensor=false"></script>
+  </body>
+</html>

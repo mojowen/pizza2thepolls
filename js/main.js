@@ -1,5 +1,3 @@
----
----
 var totals_url =
   "https://spreadsheets.google.com/feeds/list/1mxmW0YljLEcNP1BUJoUlAEtzzE0FXwbaDBPN26dlloo/2/public/basic?alt=json";
 var upcoming_url =
@@ -86,8 +84,8 @@ function refreshTotals() {
   });
 }
 
-refreshTotals()
-setInterval(refreshTotals, 1000 * 60 * 2)
+// refreshTotals()
+// setInterval(refreshTotals, 1000 * 60 * 2)
 
 var showConfirmation = function(amount) {
   var message = `Thanks for donating $${amount} to Pizza to the Polls. You'll receive a receipt in your email soon.`;
@@ -362,4 +360,7 @@ function handleSubmit() {
       document.location = '#report';
     }
   );
+}
+if( window.submitReport ) {
+  window.submitReport = handleSubmit()
 }
