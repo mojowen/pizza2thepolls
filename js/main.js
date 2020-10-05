@@ -304,11 +304,13 @@ function fillInAddress() {
   // Get each component of the address from the place details
   // and fill the corresponding field on the form.
   for (var i = 0; i < place.address_components.length; i++) {
-    var addressType = place.address_components[i].types[0],
-      val = place.address_components[i][componentForm[addressType]];
-    if (componentForm[addressType]) {
-      document.getElementById(addressType).value = val;
-    }
+    try {
+      var addressType = place.address_components[i].types[0],
+        val = place.address_components[i][componentForm[addressType]];
+      if (componentForm[addressType]) {
+        document.getElementById(addressType).value = val;
+      }
+    } catch (e) {}
   }
   premise.value = place.name;
   formatted_address.value = place.formatted_address;
